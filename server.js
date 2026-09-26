@@ -288,28 +288,43 @@ const server = http.createServer(async (req, res) => {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     })
-    res.end(JSON.stringify({ status: "ok", timestamp: new Date().toISOString() }))
+    res.end(
+      JSON.stringify({
+        status: "ok",
+        version: "v3-bulletproof",
+        timestamp: new Date().toISOString(),
+        indexExists: fs.existsSync(path.join(__dirname, "index.html")),
+        dirname: __dirname,
+      })
+    )
     return
   }
 
+  // --- Static File Serving ---------------------------------------------------
   if (reqPath === "/" || reqPath === "") reqPath = "/index.html"
 
-  // Strip leading slashes to prevent absolute root resolution on Linux/Render
-  const safeRelative = reqPath.replace(/^[/\\]+/, "")
-  const segments = safeRelative.split(/[/\\]/).filter(Boolean)
-  const isHidden = segments.some((seg) => seg.startsWith("."))
-  const filePath = path.resolve(__dirname, safeRelative)
+  // Remove leading slashes/backslashes to keep path relative to __dirname
+  const cleanRelative = reqPath.replace(/^[/\\]+/, "")
+  let targetFile = path.resolve(__dirname, cleanRelative)
 
-  // Block access outside __dirname (directory traversal)
-  if (!filePath.startsWith(path.resolve(__dirname))) {
+  // Prevent directory traversal: targetFile must be inside __dirname
+  const relFromDir = path.relative(__dirname, targetFile)
+  if (relFromDir.startsWith("..") || path.isAbsolute(relFromDir)) {
     res.writeHead(403, { "Content-Type": "text/plain" })
     res.end("403 Forbidden")
     return
   }
 
-  // Block sensitive server files from being downloaded
-  const baseName = path.basename(filePath).toLowerCase()
-  const sensitiveFiles = [
+  // Support clean URLs: if /app requested, check if /app.html exists
+  if (!fs.existsSync(targetFile) || (fs.existsSync(targetFile) && fs.statSync(targetFile).isDirectory())) {
+    if (fs.existsSync(targetFile + ".html")) {
+      targetFile = targetFile + ".html"
+    }
+  }
+
+  // Check for hidden files or sensitive files
+  const baseName = path.basename(targetFile).toLowerCase()
+  const sensitiveFiles = new Set([
     ".env",
     ".env.example",
     ".env.local",
@@ -322,27 +337,30 @@ const server = http.createServer(async (req, res) => {
     "jest.config.js",
     "postcss.config.js",
     "tailwind.config.ts",
-  ]
-  const relativeFromRoot = path.relative(__dirname, filePath)
-  const isInsideBlockedDir =
-    relativeFromRoot.startsWith("src" + path.sep) ||
-    relativeFromRoot.startsWith("node_modules" + path.sep) ||
-    relativeFromRoot.startsWith("src/") ||
-    relativeFromRoot.startsWith("node_modules/")
+  ])
 
-  if (isHidden || sensitiveFiles.includes(baseName) || isInsideBlockedDir) {
+  // Check if file is inside a blocked subdirectory relative to project root
+  const targetRelative = path.relative(__dirname, targetFile).replace(/\\/g, "/")
+  const isInsideBlockedDir =
+    targetRelative.startsWith("src/") ||
+    targetRelative.startsWith("node_modules/") ||
+    targetRelative.startsWith(".git/")
+
+  const isHidden = targetRelative.split("/").some((part) => part.startsWith("."))
+
+  if (isHidden || sensitiveFiles.has(baseName) || isInsideBlockedDir) {
     res.writeHead(404, { "Content-Type": "text/plain" })
     res.end("404 Not Found")
     return
   }
 
-  fs.stat(filePath, (err, stats) => {
+  fs.stat(targetFile, (err, stats) => {
     if (err || !stats.isFile()) {
       res.writeHead(404, { "Content-Type": "text/plain" })
       res.end("404 Not Found")
       return
     }
-    const ext = path.extname(filePath).toLowerCase()
+    const ext = path.extname(targetFile).toLowerCase()
     const contentType = MIME_TYPES[ext] || "application/octet-stream"
     res.writeHead(200, {
       "Content-Type": contentType,
@@ -351,7 +369,7 @@ const server = http.createServer(async (req, res) => {
       "X-Frame-Options": "SAMEORIGIN",
       "Referrer-Policy": "strict-origin-when-cross-origin",
     })
-    fs.createReadStream(filePath).pipe(res)
+    fs.createReadStream(targetFile).pipe(res)
   })
 })
 
