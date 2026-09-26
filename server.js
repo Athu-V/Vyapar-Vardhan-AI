@@ -323,12 +323,14 @@ const server = http.createServer(async (req, res) => {
     "postcss.config.js",
     "tailwind.config.ts",
   ]
-  if (
-    isHidden ||
-    sensitiveFiles.includes(baseName) ||
-    filePath.includes(`${path.sep}src${path.sep}`) ||
-    filePath.includes(`${path.sep}node_modules${path.sep}`)
-  ) {
+  const relativeFromRoot = path.relative(__dirname, filePath)
+  const isInsideBlockedDir =
+    relativeFromRoot.startsWith("src" + path.sep) ||
+    relativeFromRoot.startsWith("node_modules" + path.sep) ||
+    relativeFromRoot.startsWith("src/") ||
+    relativeFromRoot.startsWith("node_modules/")
+
+  if (isHidden || sensitiveFiles.includes(baseName) || isInsideBlockedDir) {
     res.writeHead(404, { "Content-Type": "text/plain" })
     res.end("404 Not Found")
     return
