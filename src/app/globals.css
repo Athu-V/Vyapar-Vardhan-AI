@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Indian rupee symbol styling */
+.rupee::before {
+  content: "₹";
+}
+
+/* Deterministic vs LLM visual indicators */
+.attribution-deterministic {
+  border-left: 4px solid #22c55e;
+  background-color: #f0fdf4;
+}
+
+.attribution-rules {
+  border-left: 4px solid #3b82f6;
+  background-color: #eff6ff;
+}
+
+.attribution-llm {
+  border-left: 4px solid #f59e0b;
+  background-color: #fffbeb;
+}
+
+/* Voice indicator animation */
+@keyframes pulse-voice {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.voice-active {
+  animation: pulse-voice 1.5s ease-in-out infinite;
+}
+
+/* Chat typing indicator dots */
+@keyframes typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.typing-dot {
+  animation: typing-bounce 1.2s ease-in-out infinite;
+}
+
+/* NABARD report print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .nabard-report {
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+  .nabard-report h1 {
+    font-size: 16pt;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .nabard-report h2 {
+    font-size: 14pt;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.25rem;
+    margin-top: 1.5rem;
+  }
+}

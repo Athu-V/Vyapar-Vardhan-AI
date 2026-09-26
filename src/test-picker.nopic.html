@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Language Picker Repro</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 24px;
+        background: #f5f5f5;
+      }
+      .picked {
+        margin-top: 12px;
+        font-weight: 600;
+      }
+      button {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+      .popup {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,0.4);
+        padding: 16px;
+      }
+      .card {
+        width: 100%;
+        max-width: 320px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 24px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      }
+      .lang-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-bottom: 8px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .lang-row:hover {
+        background: #f0f0f0;
+      }
+      .note {
+        margin-top: 16px;
+        font-size: 12px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Language picker repro</h2>
+    <p>Click a language row. The card should disappear and a chosen message should appear.</p>
+
+    <div id="picked" class="picked"></div>
+
+    <div id="popup" class="popup" style="display:none">
+      <div class="card">
+        <h2>Choose your language</h2>
+        <p class="note">Select a language to use across the app.</p>
+        <div id="rows"></div>
+        <p class="note">You can change this later from the language switcher.</p>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const STORAGE_KEY = "rba-app-language"
+        const popupEl = document.getElementById("popup")
+        const rowsEl = document.getElementById("rows")
+        const pickedEl = document.getElementById("picked")
+
+        const languages = [
+          { code: "en", name: "English", native: "English" },
+          { code: "hi", name: "Hindi", native: "हिन्दी" },
+          { code: "mr", name: "Marathi", native: "मराठी" },
+          { code: "bn", name: "Bengali", native: "বাংলা" },
+          { code: "ta", name: "Tamil", native: "தமிழ்" },
+          { code: "te", name: "Telugu", native: "తెలుగు" },
+          { code: "gu", name: "Gujarati", native: "ગુજરાતી" },
+          { code: "ml", name: "Malayalam", native: "മലയാളം" },
+          { code: "kn", name: "Kannada", native: "ಕನ್ನಡ" },
+        ]
+
+        function getStored() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY)
+            return raw || null
+          } catch (e) {
+            return null
+          }
+        }
+
+        function setStored(code) {
+          try {
+            localStorage.setItem(STORAGE_KEY, code)
+          } catch (e) {
+            // noop
+          }
+        }
+
+        function showPicked(code) {
+          const found = languages.find((l) => l.code === code)
+          pickedEl.textContent = "Chosen: " + (found ? found.name : code)
+        }
+
+        function render() {
+          const stored = getStored()
+          if (!stored) {
+            popupEl.style.display = "flex"
+            rowsEl.innerHTML = ""
+            languages.forEach((lang) => {
+              const row = document.createElement("div")
+              row.className = "langrow"
+              row.setAttribute("role", "button")
+              row.setAttribute("tabindex", "0")
+              row.innerHTML =
+                '<span style="font-weight:600">' + lang.name + "</span>" +
+                '<span style="color:#666">' + lang.native + " (" + lang.native + ")</span>"
+
+              row.addEventListener("click", function () {
+                setStored(lang.code)
+                popupEl.style.display = "none"
+                showPicked(lang.code)
+              })
+
+              row.addEventListener("keydown", function (e) {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  setStored(lang.code)
+                  popupEl.style.display = "none"
+                  showPicked(lang.code)
+                }
+              })
+
+              rowsEl.appendChild(row)
+            })
+          } else {
+            popupEl.style.display = "none"
+            showPicked(stored)
+          }
+        }
+
+        render()
+      })()
+    </script>
+  </body>
+</html>

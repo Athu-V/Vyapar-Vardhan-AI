@@ -1,0 +1,54 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+  <!-- Left hand (darker brown, behind) -->
+  <path d="M96 178 
+           C70 182 38 168 22 146 
+           C16 132 26 118 40 124 
+           C56 130 64 140 74 148 
+           C82 154 90 158 96 159 
+           Z" 
+        fill="#a9745b"/>
+
+  <!-- Right hand (lighter peach, in front) -->
+  <path d="M104 178 
+           C130 182 162 168 178 146 
+           C184 132 174 118 160 124 
+           C144 130 136 140 126 148 
+           C118 154 110 158 104 159 
+           Z" 
+        fill="#eeb98d"/>
+
+  <!-- Soil mound -->
+  <path d="M58 154 
+           C66 128 84 116 100 116 
+           C116 116 134 128 142 154 
+           C122 166 78 166 58 154 
+           Z" 
+        fill="#7c4a2d"/>
+
+  <!-- Soil texture dots -->
+  <circle cx="78" cy="146" r="3" fill="#5b3421"/>
+  <circle cx="96" cy="156" r="3" fill="#5b3421"/>
+  <circle cx="110" cy="144" r="3" fill="#5b3421"/>
+
+  <!-- Plant stem -->
+  <path d="M100 132 
+           C100 118 100 102 100 82" 
+        fill="none" 
+        stroke="#689f38" 
+        stroke-width="4" 
+        stroke-linecap="round"/>
+
+  <!-- Left leaf -->
+  <path d="M100 94 
+           C98 76 86 54 56 50 
+           C54 82 76 98 100 94 
+           Z" 
+        fill="#9ccc65"/>
+
+  <!-- Right leaf -->
+  <path d="M100 88 
+           C102 70 118 44 148 40 
+           C150 74 130 90 100 88 
+           Z" 
+        fill="#7cb342"/>
+</svg>

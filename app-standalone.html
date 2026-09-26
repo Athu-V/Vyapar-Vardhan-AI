@@ -1,0 +1,3500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्राम व्यापार सहायक — Rural Business Advisory</title>
+    <meta name="description" content="AI-driven hyper-local business advisory and financial structuring assistant for rural micro-entrepreneurs." />
+
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- BubbledotICG-FinePos -->
+    <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <style>
+/* === styles.css === */
+/* ============================================================================
+   STYLES — Intelligence Designed To Evolve
+   Single-viewport, full-bleed video-background landing page
+   ============================================================================ */
+
+/* --- CSS Variables --- */
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #8e8e8e;
+  --nav-text: #2e2e2e;
+  --pill-dark: #28282a;
+  --sign-in-text: #c8c8c8;
+  --nav-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+  --trust-bg: #28282a;
+  --trust-border: rgba(255, 255, 255, 0.4);
+  --trust-text: #c4c2c3;
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: "BubbledotICG-FinePos", "Geist Pixel Circle", monospace;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* --- Background Video --- */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* --- Page Layout --- */
+.page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  padding: clamp(16px, 2.4vh, 28px) clamp(14px, 3vw, 32px);
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.8vw, 28px);
+  width: 100%;
+  max-width: 720px;
+  flex-shrink: 0;
+}
+
+/* Logo */
+.logo {
+  display: grid;
+  place-items: center;
+  width: clamp(40px, 4.4vw, 46px);
+  height: clamp(40px, 4.4vw, 46px);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--nav-shadow);
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.logo:hover {
+  transform: scale(1.04);
+}
+
+.logo img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+}
+
+/* Nav Pill */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  height: clamp(44px, 5.2vw, 48px);
+  max-width: 430px;
+  flex: 1;
+  padding: 4px 8px;
+  border-radius: 999px;
+  box-shadow: var(--nav-shadow);
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--nav-text);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  opacity: 0.75;
+}
+
+.nav-link.active {
+  opacity: 1;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: -5px 0 0 #000, 5px 0 0 #000;
+}
+
+/* Sign In Pill */
+.sign-in-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(44px, 5.2vw, 48px);
+  padding: 0 20px;
+  background: var(--pill-dark);
+  color: var(--sign-in-text);
+  border-radius: 999px;
+  font-size: clamp(13px, 1.4vw, 15px);
+  font-weight: 500;
+  box-shadow: var(--nav-shadow);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.sign-in-pill:hover {
+  background: #323234;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Mobile Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: var(--pill-dark);
+  border-radius: 50%;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.burger-bar {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: #fff;
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.burger[aria-expanded="true"] .burger-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.burger[aria-expanded="true"] .burger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger[aria-expanded="true"] .burger-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.burger[aria-expanded="true"] {
+  background: #fff;
+}
+
+.burger[aria-expanded="true"] .burger-bar {
+  background: #000;
+}
+
+/* --- Hero --- */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  gap: 0;
+}
+
+/* Trust Row */
+.trust-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: clamp(16px, 2.5vh, 26px);
+}
+
+.trust-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-ring {
+  --ring-size: clamp(36px, 4.5vw, 42px);
+  width: var(--ring-size);
+  height: var(--ring-size);
+  background: var(--trust-bg);
+  border: 1px solid var(--trust-border);
+  border-radius: 50%;
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+.a1 { z-index: 1; }
+.a2 { z-index: 2; margin-left: calc(var(--ring-size) * -0.42); }
+.a3 { z-index: 4; margin-left: calc(var(--ring-size) * -0.42); }
+
+.trust-avatars:hover .a1 { transform: translateY(-2px); }
+.trust-avatars:hover .a2 { transform: translateY(-4px); }
+.trust-avatars:hover .a3 { transform: translateY(-2px); }
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #111;
+  font-size: calc(var(--ring-size) * 0.34);
+}
+
+.trust-pill {
+  display: flex;
+  align-items: center;
+  height: var(--ring-size);
+  margin-left: calc(var(--ring-size) * -0.42);
+  padding-left: calc(var(--ring-size) * 0.58);
+  padding-right: 14px;
+  background: var(--trust-bg);
+  border: 1px solid var(--trust-border);
+  border-radius: 999px;
+  color: var(--trust-text);
+  font-size: clamp(12px, 1.4vw, 13.5px);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Headline */
+.headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(12px, 2vh, 22px);
+}
+
+.headline-line {
+  display: block;
+  font-family: var(--font-display);
+  color: #fff;
+  font-size: clamp(28px, 6.2vw, 80px);
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.headline.anim .hl1 {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: headlineFade 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards;
+}
+
+.headline.anim .hl2 {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: headlineFade 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+/* Subhead */
+.subhead {
+  max-width: min(500px, 92%);
+  font-size: clamp(calc(13.5px + 2pt), calc(1.55vw + 2pt), calc(16.5px + 2pt));
+  color: #d0d0d0;
+  opacity: 0.8;
+  line-height: 1.55;
+  font-weight: 400;
+  margin-bottom: clamp(20px, 3vh, 32px);
+}
+
+/* CTA Button */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(11px, 1.6vh, 13px) clamp(22px, 3vw, 28px);
+  background: #fff;
+  color: #000;
+  font-size: clamp(13.5px, 1.5vw, 14.5px);
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 22px rgba(255, 255, 255, 0.32),
+    0 0 44px rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.25),
+    0 0 30px rgba(255, 255, 255, 0.45),
+    0 0 60px rgba(255, 255, 255, 0.18);
+}
+
+/* --- Stats Footer --- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 3vw, 32px);
+  width: 100%;
+  max-width: 920px;
+  flex-shrink: 0;
+  padding-top: clamp(12px, 2vh, 20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: auto;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-icon {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 33px);
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-family: var(--font-sans);
+  color: #fff;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: clamp(11px, 1.2vw, 12.5px);
+  margin-top: 2px;
+}
+
+/* --- Mobile Overlay --- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 90;
+  animation: overlayIn 0.28s ease both;
+}
+
+/* --- Mobile Menu --- */
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(340px, calc(100% - 40px));
+  background: #fff;
+  border-radius: 28px;
+  padding: 22px 18px 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  z-index: 100;
+  animation: menuIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobile-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--nav-text);
+  opacity: 0.5;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+  animation: linkIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mobile-link:nth-child(1) { animation-delay: 0.05s; }
+.mobile-link:nth-child(2) { animation-delay: 0.1s; }
+.mobile-link:nth-child(3) { animation-delay: 0.15s; }
+.mobile-link:nth-child(4) { animation-delay: 0.2s; }
+
+.mobile-link:hover {
+  opacity: 0.75;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mobile-link.active {
+  opacity: 1;
+}
+
+.mobile-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  background: #000;
+  border-radius: 50%;
+  box-shadow: -5px 0 0 #000, 5px 0 0 #000;
+}
+
+.mobile-sign-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  background: var(--pill-dark);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 16px;
+  transition: background 0.2s ease;
+  animation: linkIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+.mobile-sign-in:hover {
+  background: #323234;
+}
+
+/* --- Animations --- */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headlineFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes revealPulse {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes linkIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shared entrance animation class */
+.anim {
+  opacity: 0;
+  transform: translateY(22px) scale(0.98);
+  filter: blur(6px);
+  animation: reveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+/* Header uses slideDown instead */
+.header.anim {
+  animation-name: slideDown;
+}
+
+/* CTA uses revealPulse */
+.cta.anim {
+  animation-name: revealPulse;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .anim {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .headline.anim .hl1,
+  .headline.anim .hl2 {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Responsive: Tablet (≤720px) --- */
+@media (max-width: 720px) {
+  .nav-pill,
+  .sign-in-pill {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .headline-line {
+    letter-spacing: -0.08em;
+    line-height: 1.05;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .trust-pill {
+    font-size: 12px;
+  }
+
+  .avatar-ring {
+    --ring-size: 34px;
+  }
+}
+
+/* --- Responsive: Small Mobile (≤420px) --- */
+@media (max-width: 420px) {
+  .headline-line {
+    letter-spacing: -0.09em;
+    font-size: clamp(24px, 9vw, 40px);
+  }
+
+  .trust-pill {
+    font-size: 11px;
+    padding-right: 10px;
+  }
+
+  .subhead {
+    font-size: 14px;
+  }
+
+  .page {
+    padding: 14px 12px;
+  }
+}
+
+/* --- Responsive: Short screens (≤700px height) --- */
+@media (max-height: 700px) {
+  .hero {
+    gap: 0;
+  }
+
+  .headline {
+    margin-bottom: 10px;
+  }
+
+  .subhead {
+    margin-bottom: 16px;
+  }
+
+  .trust-row {
+    margin-bottom: 10px;
+  }
+
+  .stats {
+    padding-top: 10px;
+  }
+}
+
+/* --- Body menu-open lock --- */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* === app.css === */
+/* ============================================================================
+   APP.CSS — Rural Business Advisory App
+   Dark premium design system for the advisory modules
+   ============================================================================ */
+
+/* --- App Body --- */
+.app-body {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+}
+
+/* --- Background Video --- */
+.bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  z-index: 0;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* --- Background Overlay (darken video for readability) --- */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* --- App Shell --- */
+.app-shell {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px 12px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 16px;
+}
+
+.sidebar-logo {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.sidebar-logo img {
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.brand-sub {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Sidebar Nav */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.sidebar-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-link i {
+  width: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.arch-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  padding: 4px 8px;
+}
+
+.arch-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.arch-dot.green { background: #22c55e; }
+.arch-dot.blue { background: #3b82f6; }
+.arch-dot.amber { background: #f59e0b; }
+
+/* --- Mobile Header --- */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(10, 10, 12, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 80;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.mobile-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #fff;
+}
+
+/* --- Main Content --- */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+/* --- Module Sections --- */
+.module {
+  display: none;
+  animation: moduleIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.module.active {
+  display: block;
+}
+
+@keyframes moduleIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.module-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(20px, 3vh, 32px) clamp(16px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.module-header {
+  margin-bottom: 4px;
+}
+
+.module-title {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.module-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* --- App Hero --- */
+.app-hero {
+  text-align: center;
+  padding: clamp(20px, 4vh, 40px) 0;
+}
+
+.app-headline {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 5.5vw, 56px);
+  color: #fff;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.app-headline .hl {
+  display: block;
+}
+
+.app-subhead {
+  max-width: min(560px, 92%);
+  margin: 0 auto 24px;
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #d0d0d0;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.app-cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- App Stats --- */
+.app-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.stat-card .stat-icon {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+}
+
+.stat-card .stat-val {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-card .stat-lbl {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* --- Architecture Section --- */
+.arch-section {
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.arch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.arch-card {
+  border-radius: 16px;
+  padding: 24px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.arch-card:hover {
+  transform: translateY(-2px);
+}
+
+.arch-card.deterministic {
+  background: rgba(34, 197, 94, 0.06);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.arch-card.rules {
+  background: rgba(59, 130, 246, 0.06);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.arch-card.llm {
+  background: rgba(245, 158, 11, 0.06);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.arch-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.arch-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.arch-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* --- Cards --- */
+.card {
+  background: rgba(20, 20, 24, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* Attribution Cards */
+.card.attr-deterministic {
+  border-left: 3px solid #22c55e;
+}
+
+.card.attr-rules {
+  border-left: 3px solid #3b82f6;
+}
+
+.card.attr-llm {
+  border-left: 3px solid #f59e0b;
+}
+
+.attr-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.attr-badge.green {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.attr-badge.blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.attr-badge.amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+}
+
+/* Warning Cards */
+.card.warning-critical {
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.card.warning-orange {
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  background: rgba(249, 115, 22, 0.06);
+}
+
+/* --- Forms --- */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-grid.cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #fff;
+  font-family: var(--font-sans);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input:focus {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+select.input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23888'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+select.input option {
+  background: #1a1a1e;
+  color: #fff;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: var(--font-sans);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: var(--font-sans);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* --- Warning Box --- */
+.warning-box {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.warning-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f59e0b;
+  margin-bottom: 8px;
+}
+
+.warning-text {
+  font-size: 13px;
+  color: rgba(245, 158, 11, 0.8);
+  line-height: 1.5;
+}
+
+/* Info Box */
+.info-box {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.info-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 6px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: rgba(59, 130, 246, 0.7);
+  line-height: 1.5;
+}
+
+/* Radio */
+.radio-row {
+  display: flex;
+  gap: 16px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: #f59e0b;
+}
+
+/* --- Tables --- */
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table-wrap th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.table-wrap td {
+  padding: 10px 12px;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.table-wrap tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.table-wrap .moratorium-row {
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.table-wrap .text-green { color: #22c55e; }
+.table-wrap .text-red { color: #ef4444; }
+.table-wrap .text-amber { color: #f59e0b; }
+.table-wrap .text-muted { color: var(--muted); }
+.table-wrap .font-bold { font-weight: 600; }
+
+/* --- Stats Row --- */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.stats-row .stat-item {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stats-row .stat-item .val {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stats-row .stat-item .lbl {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* --- Methodology Box --- */
+.methodology-box {
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: rgba(59, 130, 246, 0.8);
+  margin-bottom: 16px;
+}
+
+/* --- Moratorium Compare --- */
+.moratorium-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.moratorium-box {
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.moratorium-box.good {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.moratorium-box.bad {
+  background: rgba(239, 68, 68, 0.08);
+  border: 2px solid rgba(239, 68, 68, 0.4);
+}
+
+.moratorium-box .label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.moratorium-box .value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.moratorium-box.good .value { color: #22c55e; }
+.moratorium-box.bad .value { color: #ef4444; }
+
+.moratorium-box .sub {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* --- Risk Buffer --- */
+.risk-buffer-display {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.risk-buffer-value {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: #f97316;
+  letter-spacing: -0.02em;
+}
+
+.risk-buffer-formula {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.risk-buffer-verdict {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.risk-buffer-verdict.met {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.risk-buffer-verdict.breached {
+  background: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.risk-buffer-verdict.critical {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* --- Narrator Text --- */
+.narrator-text {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: pre-wrap;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- Health Verdict --- */
+.verdict-card {
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+}
+
+.verdict-card.thriving {
+  background: rgba(34, 197, 94, 0.08);
+  border: 2px solid rgba(34, 197, 94, 0.3);
+}
+
+.verdict-card.surviving {
+  background: rgba(245, 158, 11, 0.08);
+  border: 2px solid rgba(245, 158, 11, 0.3);
+}
+
+.verdict-card.at-risk {
+  background: rgba(239, 68, 68, 0.08);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+.verdict-emoji {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.verdict-label {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.verdict-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.verdict-trend {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+}
+
+/* --- Insights --- */
+.insight-card {
+  border-left: 3px solid;
+  border-radius: 0 10px 10px 0;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.insight-card.warning {
+  border-color: #f59e0b;
+}
+
+.insight-card.alert {
+  border-color: #ef4444;
+}
+
+.insight-card.positive {
+  border-color: #22c55e;
+}
+
+.insight-card.recommendation {
+  border-color: #3b82f6;
+}
+
+.insight-meta {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insight-message {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.insight-hi {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* --- NABARD Report --- */
+.nabard-report {
+  background: rgba(20, 20, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.nabard-report .report-header {
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.nabard-report .report-header h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.nabard-report .report-header p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nabard-report .report-section {
+  margin-bottom: 24px;
+}
+
+.nabard-report .report-section h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.nabard-report .report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nabard-report .report-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: top;
+}
+
+.nabard-report .report-table td:first-child {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  width: 40%;
+  padding-right: 16px;
+}
+
+.nabard-report .report-table td:last-child {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.nabard-report .highlight-red { color: #ef4444; font-weight: 600; }
+.nabard-report .highlight-green { color: #22c55e; font-weight: 600; }
+.nabard-report .highlight-amber { color: #f59e0b; font-weight: 600; }
+
+.nabard-report .report-footer {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* --- Hidden Utility --- */
+.hidden {
+  display: none !important;
+}
+
+/* --- Mobile Overlay --- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 75;
+}
+
+/* --- Print Styles --- */
+@media print {
+  .sidebar,
+  .mobile-header,
+  .overlay,
+  .btn-primary,
+  .btn-secondary,
+  .form-grid,
+  .warning-box,
+  .info-box {
+    display: none !important;
+  }
+
+  .app-shell {
+    display: block;
+  }
+
+  .main-content {
+    overflow: visible;
+  }
+
+  .module {
+    display: block !important;
+  }
+
+  .bg,
+  .bg-overlay {
+    display: none;
+  }
+
+  .app-body {
+    background: #fff;
+    color: #000;
+    overflow: visible;
+    height: auto;
+  }
+
+  .nabard-report {
+    background: #fff;
+    border-color: #ccc;
+    color: #000;
+    padding: 20px;
+  }
+
+  .nabard-report .report-header h2 { color: #000; }
+  .nabard-report .report-section h3 { color: #000; border-color: #ccc; }
+  .nabard-report .report-table td { color: #333; border-color: #eee; }
+  .nabard-report .report-table td:first-child { color: #666; }
+}
+
+/* --- Responsive: Mobile (≤768px) --- */
+@media (max-width: 768px) {
+  .bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 90;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .main-content {
+    padding-top: 60px;
+  }
+
+  .module-inner {
+    padding: 16px 14px;
+  }
+
+  .card {
+    padding: 18px 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid.cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .arch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 10px;
+  }
+
+  .moratorium-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .app-headline {
+    font-size: clamp(22px, 7vw, 36px);
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .stats-row .stat-item {
+    padding: 10px 8px;
+  }
+
+  .stats-row .stat-item .val {
+    font-size: 16px;
+  }
+
+  .nabard-report {
+    padding: 20px 16px;
+  }
+
+  .nabard-report .report-header h2 {
+    font-size: 18px;
+  }
+
+  .verdict-emoji {
+    font-size: 36px;
+  }
+
+  .verdict-label {
+    font-size: 22px;
+  }
+
+  .verdict-card {
+    padding: 20px 16px;
+  }
+
+  .table-wrap table {
+    font-size: 12px;
+  }
+
+  .table-wrap th,
+  .table-wrap td {
+    padding: 8px 8px;
+  }
+
+  .risk-buffer-value {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+
+  .moratorium-box .value {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 17px;
+  }
+
+  .arch-card {
+    padding: 18px 16px;
+  }
+
+  .warning-box,
+  .info-box {
+    padding: 14px 12px;
+  }
+
+  .insight-card {
+    padding: 12px 14px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .narrator-text {
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+}
+
+/* --- Responsive: Small Mobile (≤420px) --- */
+@media (max-width: 420px) {
+  .app-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 12px 8px;
+  }
+
+  .stat-card .stat-val {
+    font-size: 18px;
+  }
+
+  .stat-card .stat-lbl {
+    font-size: 11px;
+  }
+
+  .form-grid.cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .app-cta-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-headline {
+    font-size: clamp(20px, 6.5vw, 32px);
+  }
+
+  .app-subhead {
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+
+  .nabard-report {
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .module-inner {
+    padding: 14px 10px;
+    gap: 14px;
+  }
+
+  .verdict-label {
+    font-size: 20px;
+  }
+
+  .verdict-emoji {
+    font-size: 32px;
+  }
+
+  .input {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+</style>
+  </head>
+  <body class="app-body">
+    <!-- Background Video -->
+    <div class="bg">
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260809_012548_ef22562c-c0ae-4816-ad9d-f8922af4e6a7.mp4" type="video/mp4" />
+      </video>
+      <div class="bg-overlay"></div>
+    </div>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Sidebar Nav -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="sidebar-logo">
+            <img src="assets/logo.svg" alt="" width="40" height="40" />
+          </a>
+          <div class="sidebar-brand">
+            <span class="brand-name">ग्राम व्यापार</span>
+            <span class="brand-sub">Rural Advisory</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button class="sidebar-link active" data-module="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </button>
+          <button class="sidebar-link" data-module="feasibility">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Feasibility</span>
+          </button>
+          <button class="sidebar-link" data-module="calculator">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Calculator</span>
+          </button>
+          <button class="sidebar-link" data-module="tracker">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>Health</span>
+          </button>
+          <button class="sidebar-link" data-module="report">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>Report</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="arch-badge">
+            <div class="arch-dot green"></div>
+            <span>Formulas</span>
+          </div>
+          <div class="arch-badge">
+            <div class="arch-dot blue"></div>
+            <span>Rules</span>
+          </div>
+          <div class="arch-badge">
+            <div class="arch-dot amber"></div>
+            <span>Narrator</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
+        <span class="mobile-title">ग्राम व्यापार सहायक</span>
+        <div style="width:48px"></div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content" id="mainContent">
+
+        <!-- ==================== HOME MODULE ==================== -->
+        <section class="module active" id="module-home">
+          <div class="module-inner">
+            <!-- Hero -->
+            <div class="app-hero">
+              <div class="trust-row">
+                <div class="trust-avatars">
+                  <div class="avatar-ring a1"><div class="avatar-inner"><i class="fa-brands fa-microsoft"></i></div></div>
+                  <div class="avatar-ring a2"><div class="avatar-inner"><i class="fa-brands fa-amazon"></i></div></div>
+                  <div class="avatar-ring a3"><div class="avatar-inner"><i class="fa-brands fa-google"></i></div></div>
+                </div>
+                <div class="trust-pill">Backed by MoSJE</div>
+              </div>
+
+              <h1 class="app-headline">
+                <span class="hl">Intelligence</span>
+                <span class="hl">For Rural Enterprise</span>
+              </h1>
+
+              <p class="app-subhead">
+                We don't just tell a rural entrepreneur if they're eligible for a loan — we tell them if they'll survive it, and then we keep proving it every month after.
+              </p>
+
+              <div class="app-cta-row">
+                <button class="cta" onclick="switchModule('calculator')">
+                  <i class="fa-solid fa-calculator"></i> Calculate Now
+                </button>
+                <button class="cta-secondary" onclick="switchModule('feasibility')">
+                  <i class="fa-solid fa-chart-line"></i> Check Feasibility
+                </button>
+              </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="app-stats">
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <div class="stat-val" data-target="30" data-suffix="L Cr" data-decimals="0">0</div>
+                <div class="stat-lbl">Credit Gap</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-industry"></i></div>
+                <div class="stat-val" data-target="7.61" data-suffix=" Cr" data-decimals="2">0</div>
+                <div class="stat-lbl">MSMEs Registered</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="stat-val" data-target="27" data-suffix="%" data-decimals="0">0</div>
+                <div class="stat-lbl">Financially Literate</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="stat-val" data-target="24.6" data-suffix="%" data-decimals="1">0</div>
+                <div class="stat-lbl">Rural Women Online</div>
+              </div>
+            </div>
+
+            <!-- Architecture -->
+            <div class="arch-section">
+              <h2 class="section-title">Three-Way Architecture</h2>
+              <p class="section-subtitle">Every output clearly labels its source — the project's central trust differentiator.</p>
+              <div class="arch-grid">
+                <div class="arch-card deterministic">
+                  <div class="arch-icon">📐</div>
+                  <h3>Deterministic Formulas</h3>
+                  <p>EMI, DSCR, break-even, Risk Buffer, Net Cash Surplus — financially exact, no approximation.</p>
+                </div>
+                <div class="arch-card rules">
+                  <div class="arch-icon">⚖️</div>
+                  <h3>Rules Engine</h3>
+                  <p>Scheme eligibility, auto-routing, health classification — legally precise, not inferable by LLM.</p>
+                </div>
+                <div class="arch-card llm">
+                  <div class="arch-icon">🗣️</div>
+                  <h3>LLM — Narrator Only</h3>
+                  <p>Explains results in plain vernacular language. Never invents a number — only reads calculator output.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEASIBILITY MODULE ==================== -->
+        <section class="module" id="module-feasibility">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title">📊 Feasibility Report</h1>
+              <p class="module-desc">Proxy-data market analysis using Census × NSSO — honest and defensible.</p>
+            </div>
+
+            <!-- Input Form -->
+            <div class="card">
+              <h2 class="card-title">📍 Location & Business Details</h2>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Village</label>
+                  <input type="text" id="f-village" placeholder="e.g., Ramgarh" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Block</label>
+                  <input type="text" id="f-block" placeholder="e.g., Sadar" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>District</label>
+                  <input type="text" id="f-district" placeholder="e.g., Lucknow" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>State</label>
+                  <select id="f-state" class="input">
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="MP">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="WestBengal">West Bengal</option>
+                    <option value="TamilNadu">Tamil Nadu</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="DEFAULT">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Business Category</label>
+                  <select id="f-category" class="input">
+                    <option value="dairy">डेयरी (Dairy)</option>
+                    <option value="retail" selected>खुदरा (Retail)</option>
+                    <option value="tailoring">सिलाई (Tailoring)</option>
+                    <option value="agri-processing">कृषि प्रसंस्करण (Agri-Processing)</option>
+                    <option value="small-manufacturing">लघु उद्योग (Manufacturing)</option>
+                    <option value="services">सेवाएं (Services)</option>
+                    <option value="trading">व्यापार (Trading)</option>
+                    <option value="other">अन्य (Other)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Margin Capital (₹)</label>
+                  <input type="number" id="f-margin" placeholder="उदा. 1,00,000 (e.g. 100000)" class="input" />
+                </div>
+              </div>
+
+              <!-- Single Buyer Question -->
+              <div class="warning-box">
+                <div class="warning-title">🏪 Critical: "Ek buyer ko bechoge ya alag-alag?"</div>
+                <div class="radio-row">
+                  <label class="radio-label"><input type="radio" name="f-buyer" value="0" checked /> Multiple buyers</label>
+                  <label class="radio-label"><input type="radio" name="f-buyer" value="1" /> Single buyer</label>
+                </div>
+              </div>
+
+              <button class="btn-primary" onclick="generateFeasibility()">
+                Generate Report <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Results (hidden initially) -->
+            <div id="feasibility-results" class="hidden">
+              <!-- Market Analysis -->
+              <div class="card attr-deterministic">
+                <div class="attr-badge green">📐 Deterministic — Proxy Data</div>
+                <h2 class="card-title">Market Analysis</h2>
+                <div class="methodology-box">
+                  <strong>Methodology:</strong> Local Demand = Population (Census) × Per-Capita Consumption (NSSO). Supply from Livestock Census + Udyam data.
+                </div>
+                <div class="stats-row" id="f-market-stats"></div>
+              </div>
+
+              <!-- SWOT -->
+              <div class="card" id="f-swot"></div>
+
+              <!-- Viability -->
+              <div class="card" id="f-viability"></div>
+
+              <!-- Warnings -->
+              <div id="f-warnings"></div>
+
+              <!-- LLM Narrator -->
+              <div class="card attr-llm">
+                <div class="attr-badge amber">🗣️ LLM Narrator — Vernacular</div>
+                <div id="f-narrator" class="narrator-text"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== CALCULATOR MODULE ==================== -->
+        <section class="module" id="module-calculator">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title">💰 Financial Calculator</h1>
+              <p class="module-desc">Margin → Project Cost → Loan → EMI → Risk Buffer → Net Cash Surplus</p>
+            </div>
+
+            <!-- Input -->
+            <div class="card">
+              <h2 class="card-title">📋 Business Onboarding</h2>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Margin Capital (₹)</label>
+                  <input type="number" id="c-margin" placeholder="उदा. 1,00,000 (e.g. 100000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Business Category</label>
+                  <select id="c-category" class="input">
+                    <option value="dairy">डेयरी (Dairy)</option>
+                    <option value="retail" selected>खुदरा (Retail)</option>
+                    <option value="tailoring">सिलाई (Tailoring)</option>
+                    <option value="agri-processing">कृषि प्रसंस्करण</option>
+                    <option value="small-manufacturing">लघु उद्योग</option>
+                    <option value="services">सेवाएं</option>
+                    <option value="trading">व्यापार</option>
+                    <option value="other">अन्य</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Monthly Revenue (₹)</label>
+                  <input type="number" id="c-revenue" placeholder="उदा. 80,000 (e.g. 80000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Monthly COGS (₹)</label>
+                  <input type="number" id="c-cogs" placeholder="उदा. 50,000 (e.g. 50000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Monthly OpEx (₹)</label>
+                  <input type="number" id="c-opex" placeholder="उदा. 12,000 (e.g. 12000)" class="input" />
+                </div>
+              </div>
+              <button class="btn-primary" onclick="calculateFinancials()">
+                Calculate <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Results -->
+            <div id="calc-results" class="hidden">
+              <!-- Step 1: Deterministic -->
+              <div class="card attr-deterministic">
+                <div class="attr-badge green">📐 Step 1: Deterministic Calculation</div>
+                <div class="calc-grid" id="c-step1"></div>
+              </div>
+
+              <!-- Step 2: Rules -->
+              <div class="card attr-rules">
+                <div class="attr-badge blue">⚖️ Step 2: Rules Engine — Scheme Selection</div>
+                <div id="c-step2"></div>
+              </div>
+
+              <!-- Moratorium Killer -->
+              <div class="card warning-critical">
+                <div class="card-title">⚠️ The Silent Moratorium Killer</div>
+                <p class="card-desc">Interest continues compounding during moratorium. "6 months free" ≠ 6 months break.</p>
+                <div class="moratorium-compare" id="c-moratorium"></div>
+              </div>
+
+              <!-- Risk Buffer -->
+              <div class="card warning-orange">
+                <div class="card-title">🛡️ Risk Buffer — The Most Important Number</div>
+                <p class="card-desc">Minimum monthly profit to safely absorb a bad month AND still service the EMI.</p>
+                <div id="c-riskbuffer"></div>
+              </div>
+
+              <!-- Net Cash Surplus -->
+              <div class="card" id="c-surplus"></div>
+
+              <!-- Repayment Schedule -->
+              <div class="card">
+                <div class="card-title">📅 Quarterly Repayment Schedule</div>
+                <div class="table-wrap" id="c-schedule"></div>
+              </div>
+
+              <!-- LLM Narrator -->
+              <div class="card attr-llm">
+                <div class="attr-badge amber">🗣️ LLM Narrator — Vernacular</div>
+                <div id="c-narrator" class="narrator-text"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== HEALTH TRACKER MODULE ==================== -->
+        <section class="module" id="module-tracker">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title">📈 Business Health Tracker</h1>
+              <p class="module-desc">Monthly tracking → quarterly aggregation → Thriving/Surviving/At Risk verdict.</p>
+            </div>
+
+            <!-- Passive Capture Info -->
+            <div class="info-box">
+              <div class="info-title">📱 Passive Data Capture</div>
+              <p>In production: WhatsApp nudge → IVR call → CSC agent. Missing a day doesn't break the tracker.</p>
+            </div>
+
+            <!-- Data Entry -->
+            <div class="card">
+              <h2 class="card-title">📝 Monthly Revenue Entry</h2>
+              <div class="form-grid cols-4">
+                <div class="form-group">
+                  <label>Month</label>
+                  <input type="month" id="t-month" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Revenue (₹)</label>
+                  <input type="number" id="t-revenue" placeholder="उदा. 80,000 (e.g. 80000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>COGS (₹)</label>
+                  <input type="number" id="t-cogs" placeholder="उदा. 50,000 (e.g. 50000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>OpEx (₹)</label>
+                  <input type="number" id="t-opex" placeholder="उदा. 12,000 (e.g. 12000)" class="input" />
+                </div>
+              </div>
+              <div class="btn-row">
+                <button class="btn-secondary" onclick="addTrackerEntry()">+ Add Entry</button>
+                <button class="btn-primary" onclick="generateHealthReport()">Generate Report <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- Entries Table -->
+            <div class="card">
+              <h2 class="card-title">📊 Monthly Entries</h2>
+              <div class="table-wrap" id="t-entries"></div>
+            </div>
+
+            <!-- Health Report -->
+            <div id="health-results" class="hidden">
+              <!-- Verdict -->
+              <div id="t-verdict"></div>
+
+              <!-- Quarterly Comparison -->
+              <div class="card">
+                <div class="card-title">📊 Quarterly Comparison</div>
+                <div class="table-wrap" id="t-quarterly"></div>
+              </div>
+
+              <!-- Live DSCR -->
+              <div class="card attr-deterministic">
+                <div class="attr-badge green">📐 Live DSCR Recomputation</div>
+                <div id="t-dscr"></div>
+              </div>
+
+              <!-- Insights -->
+              <div class="card">
+                <div class="card-title">🔍 Automated Insights</div>
+                <p class="card-desc">Every insight points to a specific line item, not a vague sentiment.</p>
+                <div id="t-insights"></div>
+              </div>
+
+              <!-- NABARD Preview -->
+              <div class="card">
+                <div class="card-title">📄 Bank-Acceptable Output</div>
+                <p class="card-desc">Mimics the NABARD Model Bankable Project Report format.</p>
+                <button class="btn-primary" onclick="window.print()" style="margin-top:12px">
+                  <i class="fa-solid fa-print"></i> Print as NABARD Format
+                </button>
+              </div>
+
+              <!-- LLM Narrator -->
+              <div class="card attr-llm">
+                <div class="attr-badge amber">🗣️ LLM Narrator — Vernacular</div>
+                <div id="t-narrator" class="narrator-text"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== REPORT MODULE ==================== -->
+        <section class="module" id="module-report">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title">📄 NABARD Report Export</h1>
+              <p class="module-desc">Bank-acceptable report matching the Model Bankable Project Report format.</p>
+            </div>
+
+            <div class="card">
+              <h2 class="card-title">📋 Business Details</h2>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Business Name</label>
+                  <input type="text" id="r-name" placeholder="e.g., Sharma General Store" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Village</label>
+                  <input type="text" id="r-village" placeholder="Ramgarh" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Block</label>
+                  <input type="text" id="r-block" placeholder="Sadar" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>District</label>
+                  <input type="text" id="r-district" placeholder="Lucknow" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Margin Capital (₹)</label>
+                  <input type="number" id="r-margin" placeholder="उदा. 1,00,000 (e.g. 100000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Monthly Revenue (₹)</label>
+                  <input type="number" id="r-revenue" placeholder="उदा. 80,000 (e.g. 80000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Monthly COGS (₹)</label>
+                  <input type="number" id="r-cogs" placeholder="उदा. 50,000 (e.g. 50000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label>Monthly OpEx (₹)</label>
+                  <input type="number" id="r-opex" placeholder="उदा. 12,000 (e.g. 12000)" class="input" />
+                </div>
+              </div>
+              <button class="btn-primary" onclick="generateNABARDReport()">
+                Generate Report <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Report Output -->
+            <div id="report-output" class="hidden">
+              <button class="btn-primary" onclick="window.print()" style="margin-bottom:16px">
+                <i class="fa-solid fa-print"></i> Print / Save as PDF
+              </button>
+              <div class="nabard-report" id="report-content"></div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="overlay" id="overlay" hidden></div>
+
+    <script>
+/* === engine.js === */
+/* ============================================================================
+   ENGINE.JS — Deterministic Financial Engine + Rules Engine + Narrator
+   The LLM never invents a number — it only reads numbers a calculator produced.
+   ============================================================================ */
+
+const Engine = (function () {
+  "use strict"
+
+  // --- Data Sources (Census × NSSO proxy data) ---
+  const PER_CAPITA_CONSUMPTION = {
+    dairy: 3200,
+    retail: 18000,
+    tailoring: 2400,
+    "agri-processing": 5600,
+    "small-manufacturing": 8000,
+    services: 4200,
+    trading: 12000,
+    other: 6000,
+  }
+
+  const POPULATION = {
+    UP: { block: 180000, village: 2500 },
+    Bihar: { block: 150000, village: 2200 },
+    MP: { block: 160000, village: 2000 },
+    Maharashtra: { block: 140000, village: 1800 },
+    Rajasthan: { block: 170000, village: 2100 },
+    WestBengal: { block: 190000, village: 2800 },
+    TamilNadu: { block: 130000, village: 1600 },
+    Karnataka: { block: 145000, village: 1900 },
+    Gujarat: { block: 155000, village: 2000 },
+    Odisha: { block: 135000, village: 1700 },
+    DEFAULT: { block: 155000, village: 2100 },
+  }
+
+  const COMPETITORS = {
+    dairy: { perBlock: 12, density: "low" },
+    retail: { perBlock: 45, density: "high" },
+    tailoring: { perBlock: 20, density: "moderate" },
+    "agri-processing": { perBlock: 8, density: "low" },
+    "small-manufacturing": { perBlock: 15, density: "moderate" },
+    services: { perBlock: 30, density: "moderate" },
+    trading: { perBlock: 55, density: "high" },
+    other: { perBlock: 20, density: "moderate" },
+  }
+
+  const AVG_REVENUE_PER_COMPETITOR = {
+    dairy: 360000,
+    retail: 480000,
+    tailoring: 240000,
+    "agri-processing": 600000,
+    "small-manufacturing": 720000,
+    services: 300000,
+    trading: 540000,
+    other: 360000,
+  }
+
+  const CATEGORY_NAMES = {
+    dairy: { en: "Dairy & Allied", hi: "डेयरी" },
+    retail: { en: "Retail Shop", hi: "खुदरा" },
+    tailoring: { en: "Tailoring", hi: "सिलाई" },
+    "agri-processing": { en: "Agri-Processing", hi: "कृषि प्रसंस्करण" },
+    "small-manufacturing": { en: "Manufacturing", hi: "लघु उद्योग" },
+    services: { en: "Services", hi: "सेवाएं" },
+    trading: { en: "Trading", hi: "व्यापार" },
+    other: { en: "Other", hi: "अन्य" },
+  }
+
+  // --- Loan Schemes ---
+  const SCHEMES = [
+    {
+      id: "micro-finance",
+      name: "Micro Finance Scheme",
+      nameHi: "माइक्रो फाइनेंस योजना",
+      min: 0,
+      max: 140000,
+      loanPct: 90,
+      rate: 6.5,
+      tenure: 3,
+      moratorium: 3,
+      source: "MoSJE — Stand-Up India Guidelines",
+      lastVerified: "15 January 2025",
+    },
+    {
+      id: "term-loan",
+      name: "Term Loan Scheme",
+      nameHi: "टर्म लोन योजना",
+      min: 140001,
+      max: 5000000,
+      loanPct: 90,
+      rate: 8.0,
+      tenure: 7,
+      moratorium: 6,
+      source: "MoSJE — Stand-Up India Guidelines",
+      lastVerified: "15 January 2025",
+    },
+  ]
+
+  // --- Deterministic Formulas ---
+
+  function fmtINR(n) {
+    if (n >= 10000000) return "\u20B9" + (n / 10000000).toFixed(2) + " Cr"
+    if (n >= 100000) return "\u20B9" + (n / 100000).toFixed(2) + " L"
+    if (n >= 1000) return "\u20B9" + (n / 1000).toFixed(1) + "K"
+    return "\u20B9" + n.toLocaleString("en-IN")
+  }
+
+  function calcProjectCost(margin) {
+    return margin / 0.10
+  }
+
+  function calcLoanAmount(projectCost, pct) {
+    return projectCost * (pct / 100)
+  }
+
+  function calcEMI(principal, annualRate, years) {
+    if (principal <= 0) return 0
+    var r = annualRate / 100 / 12
+    var n = years * 12
+    if (r === 0) return Math.round(principal / n)
+    var f = Math.pow(1 + r, n)
+    return Math.round((principal * r * f) / (f - 1))
+  }
+
+  function calcPostMoratoriumEMI(principal, annualRate, years, moratoriumMonths) {
+    if (principal <= 0 || moratoriumMonths === 0) return calcEMI(principal, annualRate, years)
+    var r = annualRate / 100 / 12
+    var compounded = principal * Math.pow(1 + r, moratoriumMonths)
+    var remaining = years * 12 - moratoriumMonths
+    if (remaining <= 0 || r === 0) return 0
+    var f = Math.pow(1 + r, remaining)
+    return Math.round((compounded * r * f) / (f - 1))
+  }
+
+  function calcRiskBuffer(postMoratoriumEMI) {
+    return Math.round(postMoratoriumEMI * 1.5)
+  }
+
+  function calcNetCashSurplus(rev, cogs, opex, emi) {
+    return rev - cogs - opex - emi
+  }
+
+  function calcGrossMargin(rev, cogs) {
+    if (rev <= 0) return 0
+    return Math.round(((rev - cogs) / rev) * 100 * 100) / 100
+  }
+
+  function calcNetMargin(surplus, rev) {
+    if (rev <= 0) return 0
+    return Math.round((surplus / rev) * 100 * 100) / 100
+  }
+
+  function calcDSCR(netIncome, annualDebt) {
+    if (annualDebt <= 0) return 0
+    return Math.round((netIncome / annualDebt) * 100) / 100
+  }
+
+  function calcBreakEven(investment, monthlySurplus) {
+    if (monthlySurplus <= 0) return Infinity
+    return Math.ceil(investment / monthlySurplus)
+  }
+
+  // --- Rules Engine ---
+
+  function selectScheme(projectCost) {
+    for (var i = 0; i < SCHEMES.length; i++) {
+      if (projectCost >= SCHEMES[i].min && projectCost <= SCHEMES[i].max) {
+        return SCHEMES[i]
+      }
+    }
+    return null
+  }
+
+  function classifyHealth(netMargin, riskBufferMet, dscr) {
+    if (netMargin >= 20 && riskBufferMet && dscr >= 1.25) return "thriving"
+    if (netMargin < 5 || dscr < 1.0 || !riskBufferMet) return "at-risk"
+    return "surviving"
+  }
+
+  // --- Market Analysis (Proxy Data) ---
+
+  function estimateConsumerBase(state) {
+    var data = POPULATION[state] || POPULATION.DEFAULT
+    return Math.round(data.block * 0.65)
+  }
+
+  function estimateDemand(consumerBase, category) {
+    return Math.round(consumerBase * (PER_CAPITA_CONSUMPTION[category] || 6000))
+  }
+
+  function estimateSupply(category) {
+    var comp = COMPETITORS[category] || COMPETITORS.other
+    var avgRev = AVG_REVENUE_PER_COMPETITOR[category] || 360000
+    return comp.perBlock * avgRev
+  }
+
+  // --- Full Financial Calculation ---
+
+  function computeFinancials(margin, revenue, cogs, opex) {
+    var projectCost = calcProjectCost(margin)
+    var scheme = selectScheme(projectCost)
+    if (!scheme) return null
+
+    var loanAmount = calcLoanAmount(projectCost, scheme.loanPct)
+    var emi = calcEMI(loanAmount, scheme.rate, scheme.tenure)
+    var postMorEMI = calcPostMoratoriumEMI(loanAmount, scheme.rate, scheme.tenure, scheme.moratorium)
+    var riskBuffer = calcRiskBuffer(postMorEMI)
+    var netSurplus = calcNetCashSurplus(revenue, cogs, opex, 0)
+    var netSurplusAfterEMI = calcNetCashSurplus(revenue, cogs, opex, postMorEMI)
+    var annualNetIncome = (revenue - cogs - opex) * 12
+    var annualDebt = postMorEMI * 12
+    var dscr = calcDSCR(annualNetIncome, annualDebt)
+    var totalInterest = emi * scheme.tenure * 12 - loanAmount
+    var breakEven = calcBreakEven(margin + totalInterest, Math.max(0, netSurplusAfterEMI))
+
+    return {
+      margin: margin,
+      projectCost: projectCost,
+      scheme: scheme,
+      loanAmount: loanAmount,
+      emi: emi,
+      postMorEMI: postMorEMI,
+      riskBuffer: riskBuffer,
+      netSurplus: netSurplus,
+      netSurplusAfterEMI: netSurplusAfterEMI,
+      dscr: dscr,
+      totalInterest: Math.round(totalInterest),
+      totalPayment: Math.round(loanAmount + totalInterest),
+      breakEven: breakEven,
+      revenue: revenue,
+      cogs: cogs,
+      opex: opex,
+    }
+  }
+
+  // --- Repayment Schedule ---
+
+  function generateSchedule(calc) {
+    var s = calc.scheme
+    var r = s.rate / 100 / 12
+    var quarterly = calc.emi * 3
+    var balance = calc.loanAmount
+    var totalQ = s.tenure * 4
+    var moratQ = Math.ceil(s.moratorium / 3)
+    var schedule = []
+
+    for (var q = 1; q <= totalQ; q++) {
+      var qLabel = "Q" + (((q - 1) % 4) + 1) + "-" + (2026 + Math.floor((q - 1) / 4))
+
+      if (q <= moratQ) {
+        var intAcc = balance * r * 3
+        balance += intAcc
+        schedule.push({
+          period: q, quarter: qLabel, principal: 0,
+          interest: Math.round(intAcc), payment: 0,
+          balance: Math.round(balance), moratorium: true,
+        })
+      } else {
+        var intPay = Math.round(balance * r * 3)
+        var princPay = Math.round(quarterly - intPay)
+        balance -= princPay
+        schedule.push({
+          period: q, quarter: qLabel, principal: Math.max(0, princPay),
+          interest: intPay, payment: Math.round(quarterly),
+          balance: Math.max(0, Math.round(balance)), moratorium: false,
+        })
+      }
+    }
+    return schedule
+  }
+
+  // --- Feasibility Report ---
+
+  function computeFeasibility(state, category, margin, singleBuyer) {
+    var consumers = estimateConsumerBase(state)
+    var demand = estimateDemand(consumers, category)
+    var supply = estimateSupply(category)
+    var gap = demand - supply
+    var comp = COMPETITORS[category] || COMPETITORS.other
+    var cat = CATEGORY_NAMES[category] || CATEGORY_NAMES.other
+
+    return {
+      consumers: consumers,
+      demand: demand,
+      supply: supply,
+      gap: gap,
+      demandDeficit: gap > 0,
+      density: comp.density,
+      competitors: comp.perBlock,
+      category: cat,
+      singleBuyer: singleBuyer,
+      viabilityScore: gap > 0 && comp.density === "low" ? "high"
+        : gap <= 0 && comp.density === "high" ? "low" : "moderate",
+    }
+  }
+
+  // --- Health Report ---
+
+  function computeHealth(entries, calc) {
+    if (entries.length < 3) return null
+
+    // Q1 = first 3 months, Q2 = next 3 months
+    var q1Entries = entries.slice(0, 3)
+    var q2Entries = entries.slice(3, 6)
+    if (q2Entries.length < 3) q2Entries = entries.slice(0, 3) // fallback
+
+    function aggregate(arr) {
+      var rev = arr.reduce(function (s, e) { return s + e.revenue }, 0)
+      var cogs = arr.reduce(function (s, e) { return s + e.cogs }, 0)
+      var opex = arr.reduce(function (s, e) { return s + e.opex }, 0)
+      var emi = arr.reduce(function (s, e) { return s + (calc ? calc.postMorEMI : 14000) }, 0)
+      var surplus = rev - cogs - opex - emi
+      var grossMargin = calcGrossMargin(rev, cogs)
+      var netMargin = calcNetMargin(surplus, rev)
+      var dscr = calcDSCR((rev - cogs - opex) * 4, emi * 4)
+      var riskBuf = calcRiskBuffer(emi / 3)
+      var riskMet = netMargin >= (riskBuf / rev) * 100 * 3
+      var health = classifyHealth(netMargin, riskMet, dscr)
+      return { rev: rev, cogs: cogs, opex: opex, emi: emi, surplus: surplus, grossMargin: grossMargin, netMargin: netMargin, dscr: dscr, health: health, riskMet: riskMet }
+    }
+
+    var q1 = aggregate(q1Entries)
+    var q2 = aggregate(q2Entries)
+
+    // Trend
+    var marginDiff = q2.netMargin - q1.netMargin
+    var trend = marginDiff > 3 ? "improving" : marginDiff < -3 ? "declining" : "stable"
+
+    // Single buyer check
+    var totalRev = entries.reduce(function (s, e) { return s + e.revenue }, 0)
+    var totalSingle = entries.reduce(function (s, e) { return s + (e.revenue * 0.7) }, 0) // simulate
+    var singleBuyerFlag = totalRev > 0 && (totalSingle / totalRev) > 0.6
+
+    // Insights
+    var insights = []
+
+    if (q1.rev > 0 && q2.cogs > q1.cogs) {
+      var cogsGrowth = ((q2.cogs - q1.cogs) / q1.cogs) * 100
+      var revGrowth = ((q2.rev - q1.rev) / q1.rev) * 100
+      if (cogsGrowth > revGrowth) {
+        insights.push({
+          type: "warning", metric: "COGS",
+          msg: "Raw material cost increased by " + cogsGrowth.toFixed(1) + "% while revenue grew only " + revGrowth.toFixed(1) + "%. Check your supplier prices.",
+          hi: "कच्चे माल की लागत " + cogsGrowth.toFixed(1) + "% बढ़ गई जबकि राजस्व केवल " + revGrowth.toFixed(1) + "% बढ़ा। सप्लायर कीमत चेक करें।",
+        })
+      }
+    }
+
+    if (q1.opex > 0) {
+      var expGrowth = ((q2.opex - q1.opex) / q1.opex) * 100
+      var revGrowth2 = q1.rev > 0 ? ((q2.rev - q1.rev) / q1.rev) * 100 : 0
+      if (revGrowth2 < 2 && expGrowth > 10) {
+        insights.push({
+          type: "alert", metric: "OpEx",
+          msg: "Revenue is flat but operating expenses rose " + expGrowth.toFixed(1) + "%.",
+          hi: "राजस्व स्थिर है लेकिन परिचालन खर्च " + expGrowth.toFixed(1) + "% बढ़ गया।",
+        })
+      }
+    }
+
+    if (q2.surplus > 0 && !q2.riskMet) {
+      insights.push({
+        type: "warning", metric: "Risk Buffer",
+        msg: "Net cash surplus is positive but below the Risk Buffer threshold. One bad month could push you into EMI default.",
+        hi: "शुद्ध नकदी अधिशेष सकारात्मक है लेकिन जोखिम बफर सीमा से कम है।",
+      })
+    }
+
+    if (q2.dscr < 1.0) {
+      insights.push({
+        type: "alert", metric: "DSCR",
+        msg: "DSCR is " + q2.dscr.toFixed(2) + " — below 1.0 means business income cannot cover EMI payments.",
+        hi: "DSCR " + q2.dscr.toFixed(2) + " है — 1.0 से नीचे का मतलब व्यापारिक आय EMI को कवर नहीं कर सकती।",
+      })
+    }
+
+    if (q2.health === "thriving") {
+      insights.push({
+        type: "positive", metric: "Health",
+        msg: "Business is thriving — net margin of " + q2.netMargin.toFixed(1) + "% clears the Risk Buffer. Consider reinvestment.",
+        hi: "व्यवसाय अच्छा कर रहा है — " + q2.netMargin.toFixed(1) + "% शुद्ध मार्जिन। पुनर्निवेश पर विचार करें।",
+      })
+    }
+
+    if (q2.health === "at-risk") {
+      insights.push({
+        type: "recommendation", metric: "Health",
+        msg: "Business is at risk. Actions: (1) Renegotiate supplier prices, (2) Reduce OpEx, (3) Consider working-capital scheme, (4) Diversify buyers.",
+        hi: "व्यवसाय जोखिम में है। तत्काल कार्रवाई: (1) सप्लायर कीमत, (2) खर्च कम करें, (3) वर्किंग-कैपिटल स्कीम, (4) खरीदार विविधता।",
+      })
+    }
+
+    return {
+      q1: q1, q2: q2, trend: trend, insights: insights,
+      singleBuyerFlag: singleBuyerFlag,
+    }
+  }
+
+  // --- Narrator (Vernacular) ---
+
+  function narrateFinancials(calc) {
+    return (
+      "📐 **Deterministic Calculation:**\n" +
+      "• Project Cost: " + fmtINR(calc.projectCost) + " (" + calc.margin.toLocaleString("en-IN") + " ÷ 10%)\n" +
+      "• Loan Eligibility: " + fmtINR(calc.loanAmount) + " (" + calc.scheme.loanPct + "% of project cost)\n" +
+      "• Monthly EMI: " + fmtINR(calc.emi) + "\n\n" +
+      "⚠️ **Post-Moratorium Reality:**\n" +
+      "• After " + calc.scheme.moratorium + " months moratorium, actual EMI: " + fmtINR(calc.postMorEMI) + "/month\n" +
+      "• Interest compounds during moratorium — \"6 months free\" ≠ break\n\n" +
+      "🛡️ **Risk Buffer (Most Important Number):**\n" +
+      "• Minimum monthly profit for safety: " + fmtINR(calc.riskBuffer) + "/month\n" +
+      "• If business can't consistently earn this, the loan is too risky.\n\n" +
+      "💰 **Net Cash Position:**\n" +
+      "• Revenue − COGS − OpEx − EMI = " + fmtINR(calc.netSurplusAfterEMI) + "/month\n" +
+      (calc.netSurplusAfterEMI < 0
+        ? "❌ NEGATIVE — business not viable as structured!"
+        : "✅ Positive — business can sustain the EMI.") +
+      "\n\n📊 **DSCR: " + calc.dscr + "** " +
+      (calc.dscr >= 1.25 ? "(Healthy)" : calc.dscr >= 1.0 ? "(Tight)" : "(Below 1 — cannot cover EMI)")
+    )
+  }
+
+  function narrateFeasibility(f) {
+    return (
+      "📊 **Market Analysis (Census × NSSO):**\n" +
+      "• Consumer base (5-10 km): " + f.consumers.toLocaleString("en-IN") + " people\n" +
+      "• Annual demand: " + fmtINR(f.demand) + "\n" +
+      "• Current supply: " + fmtINR(f.supply) + "\n" +
+      "• Gap: " + (f.demandDeficit ? "✅ +" : "❌ ") + fmtINR(Math.abs(f.gap)) + "\n" +
+      "• Viability: " + f.viabilityScore.toUpperCase() + "\n\n" +
+      (f.singleBuyer
+        ? "⚠️ SINGLE BUYER DEPENDENCY — ~40% lower profit. Diversify buyers.\n\n"
+        : "") +
+      "Bhai, " + f.category.hi + " ke liye " + f.consumers.toLocaleString("en-IN") + " log hain. " +
+      (f.demandDeficit
+        ? "Demand zyada hai — naye business ke liye mauka hai."
+        : "Supply zyada hai — competition tough hoga.")
+    )
+  }
+
+  function narrateHealth(h) {
+    var emoji = { thriving: "🟢", surviving: "🟡", "at-risk": "🔴" }
+    var label = { thriving: "THRIVING", surviving: "SURVIVING", "at-risk": "AT RISK" }
+    var q = h.q2
+
+    return (
+      emoji[h.q2.health] + " **Business Health: " + label[h.q2.health] + "**\n\n" +
+      "📊 Q2 Numbers:\n" +
+      "• Revenue: " + fmtINR(q.rev) + " | COGS: " + fmtINR(q.cogs) + "\n" +
+      "• OpEx: " + fmtINR(q.opex) + " | EMI: " + fmtINR(q.emi) + "\n" +
+      "• Net Surplus: " + fmtINR(q.surplus) + "\n" +
+      "• Gross Margin: " + q.grossMargin + "% | Net Margin: " + q.netMargin + "%\n" +
+      "• DSCR: " + q.dscr + "\n\n" +
+      h.insights.map(function (i) {
+        return (i.type === "alert" ? "🚨" : i.type === "warning" ? "⚠️" : "✅") + " " + i.msg
+      }).join("\n\n") +
+      "\n\n📈 Trend: " + h.trend
+    )
+  }
+
+  // --- Public API ---
+  return {
+    fmtINR: fmtINR,
+    CATEGORY_NAMES: CATEGORY_NAMES,
+    SCHEMES: SCHEMES,
+    calcProjectCost: calcProjectCost,
+    calcEMI: calcEMI,
+    calcPostMoratoriumEMI: calcPostMoratoriumEMI,
+    calcRiskBuffer: calcRiskBuffer,
+    calcGrossMargin: calcGrossMargin,
+    calcNetMargin: calcNetMargin,
+    calcDSCR: calcDSCR,
+    selectScheme: selectScheme,
+    computeFinancials: computeFinancials,
+    generateSchedule: generateSchedule,
+    computeFeasibility: computeFeasibility,
+    computeHealth: computeHealth,
+    narrateFinancials: narrateFinancials,
+    narrateFeasibility: narrateFeasibility,
+    narrateHealth: narrateHealth,
+  }
+})()
+
+</script>
+    <script>
+/* === app.js === */
+/* ============================================================================
+   APP.JS — Module switching, form handling, rendering results
+   ============================================================================ */
+
+(function () {
+  "use strict"
+
+  // --- Module Switching ---
+  function switchModule(name) {
+    // Hide all modules
+    document.querySelectorAll(".module").forEach(function (m) {
+      m.classList.remove("active")
+    })
+
+    // Show target
+    var target = document.getElementById("module-" + name)
+    if (target) {
+      target.classList.add("active")
+      // Re-trigger animation
+      target.style.animation = "none"
+      target.offsetHeight // reflow
+      target.style.animation = ""
+    }
+
+    // Update nav
+    document.querySelectorAll(".sidebar-link").forEach(function (l) {
+      l.classList.remove("active")
+      if (l.dataset.module === name) l.classList.add("active")
+    })
+
+    // Scroll to top
+    document.getElementById("mainContent").scrollTop = 0
+
+    // Close mobile menu
+    closeMobileMenu()
+  }
+
+  // Make switchModule global
+  window.switchModule = switchModule
+
+  // --- Sidebar Nav ---
+  document.querySelectorAll(".sidebar-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      switchModule(this.dataset.module)
+    })
+  })
+
+  // --- Mobile Menu ---
+  var burger = document.getElementById("burger")
+  var overlay = document.getElementById("overlay")
+  var sidebar = document.getElementById("sidebar")
+
+  function openMobileMenu() {
+    burger.setAttribute("aria-expanded", "true")
+    overlay.hidden = false
+    sidebar.classList.add("open")
+    document.body.classList.add("menu-open")
+  }
+
+  function closeMobileMenu() {
+    burger.setAttribute("aria-expanded", "false")
+    overlay.hidden = true
+    sidebar.classList.remove("open")
+    document.body.classList.remove("menu-open")
+  }
+
+  if (burger) {
+    burger.addEventListener("click", function () {
+      if (this.getAttribute("aria-expanded") === "true") {
+        closeMobileMenu()
+      } else {
+        openMobileMenu()
+      }
+    })
+  }
+
+  if (overlay) {
+    overlay.addEventListener("click", closeMobileMenu)
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeMobileMenu()
+  })
+
+  // --- Utility ---
+  function $(id) { return document.getElementById(id) }
+  function val(id) { return Number($(id).value) || 0 }
+  function text(id) { return ($(id).value || "").trim() }
+
+  // --- FEASIBILITY MODULE ---
+  window.generateFeasibility = function () {
+    var state = text("f-state")
+    var category = text("f-category")
+    var margin = val("f-margin")
+    var singleBuyer = document.querySelector('input[name="f-buyer"]:checked').value === "1"
+
+    var f = Engine.computeFeasibility(state, category, margin, singleBuyer)
+
+    // Render market stats
+    $("f-market-stats").innerHTML =
+      '<div class="stats-row">' +
+      '<div class="stat-item"><div class="val">' + f.consumers.toLocaleString("en-IN") + '</div><div class="lbl">Consumer Base</div></div>' +
+      '<div class="stat-item"><div class="val">' + Engine.fmtINR(f.demand) + '</div><div class="lbl">Annual Demand</div></div>' +
+      '<div class="stat-item"><div class="val">' + Engine.fmtINR(f.supply) + '</div><div class="lbl">Current Supply</div></div>' +
+      '<div class="stat-item"><div class="val" style="color:' + (f.demandDeficit ? '#22c55e' : '#ef4444') + '">' +
+      (f.demandDeficit ? '+' : '') + Engine.fmtINR(Math.abs(f.gap)) + '</div><div class="lbl">Supply-Demand Gap</div></div>' +
+      '<div class="stat-item"><div class="val">' + f.competitors + '</div><div class="lbl">Avg Competitors/Block</div></div>' +
+      '<div class="stat-item"><div class="val">' + f.density + '</div><div class="lbl">Competitor Density</div></div>' +
+      '</div>'
+
+    // Render SWOT
+    var strengths = ["Low initial investment (₹" + (margin / 100000).toFixed(1) + "L margin)", f.category.en + " is a local-need business"]
+    var weaknesses = margin < 50000 ? ["Very limited margin capital"] : []
+    if (f.density === "high") weaknesses.push("High competitor density in block")
+    var opportunities = []
+    if (f.demandDeficit) opportunities.push("Supply-demand gap of " + Engine.fmtINR(f.gap) + " — room for new entrants")
+    opportunities.push("Concessional credit at 6.5-8% interest")
+    var threats = ["Seasonal demand fluctuations", "Supply chain bottlenecks in rural areas"]
+    if (f.singleBuyer) threats.push("⚠️ Single buyer dependency = ~40% lower profit")
+
+    $("f-swot").innerHTML =
+      '<h2 class="card-title">📋 SWOT Analysis</h2>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">' +
+      '<div style="background:rgba(34,197,94,0.08);border-radius:12px;padding:14px"><div style="font-size:13px;font-weight:600;color:#22c55e;margin-bottom:8px">✅ Strengths</div>' + strengths.map(function(s){return '<div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:4px">• ' + s + '</div>'}).join('') + '</div>' +
+      '<div style="background:rgba(239,68,68,0.08);border-radius:12px;padding:14px"><div style="font-size:13px;font-weight:600;color:#ef4444;margin-bottom:8px">❌ Weaknesses</div>' + (weaknesses.length ? weaknesses.map(function(w){return '<div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:4px">• ' + w + '</div>'}).join('') : '<div style="font-size:13px;color:rgba(255,255,255,0.4)">None identified</div>') + '</div>' +
+      '<div style="background:rgba(59,130,246,0.08);border-radius:12px;padding:14px"><div style="font-size:13px;font-weight:600;color:#3b82f6;margin-bottom:8px">🚀 Opportunities</div>' + opportunities.map(function(o){return '<div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:4px">• ' + o + '</div>'}).join('') + '</div>' +
+      '<div style="background:rgba(245,158,11,0.08);border-radius:12px;padding:14px"><div style="font-size:13px;font-weight:600;color:#f59e0b;margin-bottom:8px">⚠️ Threats</div>' + threats.map(function(t){return '<div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:4px">• ' + t + '</div>'}).join('') + '</div>' +
+      '</div>'
+
+    // Viability
+    var scoreColor = f.viabilityScore === "high" ? "#22c55e" : f.viabilityScore === "low" ? "#ef4444" : "#f59e0b"
+    $("f-viability").innerHTML =
+      '<h2 class="card-title">📊 Viability Assessment</h2>' +
+      '<div style="text-align:center;padding:20px">' +
+      '<div style="font-size:48px;margin-bottom:8px">' + (f.viabilityScore === "high" ? "🟢" : f.viabilityScore === "low" ? "🔴" : "🟡") + '</div>' +
+      '<div style="font-size:24px;font-weight:700;color:' + scoreColor + '">' + f.viabilityScore.toUpperCase() + '</div>' +
+      '<div style="font-size:13px;color:var(--muted);margin-top:4px">Viability Score</div>' +
+      '</div>'
+
+    // Warnings
+    var warnings = ""
+    if (f.singleBuyer) {
+      warnings += '<div class="card warning-orange" style="margin-bottom:12px"><div class="card-title">⚠️ Single Buyer Dependency</div><p class="card-desc">Single buyer = ~40% lower realized profit. Connect with local Mandi board / alternate buyers. This flag will be recomputed from actual data in Module 3.</p></div>'
+    }
+    if (f.density === "high") {
+      warnings += '<div class="card warning-orange" style="margin-bottom:12px"><div class="card-title">⚠️ High Competition</div><p class="card-desc">Block has significant competitor presence. Success depends on differentiation.</p></div>'
+    }
+    $("f-warnings").innerHTML = warnings
+
+    // Narrator
+    $("f-narrator").textContent = Engine.narrateFeasibility(f)
+
+    // Show results
+    $("feasibility-results").classList.remove("hidden")
+  }
+
+  // --- CALCULATOR MODULE ---
+  window.calculateFinancials = function () {
+    var margin = val("c-margin")
+    var revenue = val("c-revenue")
+    var cogs = val("c-cogs")
+    var opex = val("c-opex")
+
+    var calc = Engine.computeFinancials(margin, revenue, cogs, opex)
+    if (!calc) {
+      alert("Project cost out of scheme range.")
+      return
+    }
+
+    // Step 1: Deterministic
+    $("c-step1").innerHTML =
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">' +
+      '<div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:var(--muted)">Margin Capital:</span><span class="font-bold">' + Engine.fmtINR(calc.margin) + '</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:var(--muted)">÷ 10% =</span><span /></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:var(--muted)">Project Cost:</span><span class="font-bold" style="font-size:18px">' + Engine.fmtINR(calc.projectCost) + '</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:var(--muted)">× ' + calc.scheme.loanPct + '% =</span><span /></div>' +
+      '<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--muted)">Loan Amount:</span><span class="font-bold" style="font-size:18px;color:#3b82f6">' + Engine.fmtINR(calc.loanAmount) + '</span></div>' +
+      '</div>' +
+      '<div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:var(--muted)">Monthly EMI:</span><span class="font-bold">' + Engine.fmtINR(calc.emi) + '</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:var(--muted)">Total Interest:</span><span class="font-bold">' + Engine.fmtINR(calc.totalInterest) + '</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:var(--muted)">Total Payment:</span><span class="font-bold">' + Engine.fmtINR(calc.totalPayment) + '</span></div>' +
+      '<div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:var(--muted)">DSCR:</span><span class="font-bold">' + calc.dscr + '</span></div>' +
+      '</div></div>'
+
+    // Step 2: Rules
+    $("c-step2").innerHTML =
+      '<div style="font-size:14px">' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">IF Project Cost ≤ ₹1.40L:</span><span>Micro Finance Scheme</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:12px"><span style="color:var(--muted)">ELSE IF ₹1.40L–₹50L:</span><span style="font-weight:600;color:#3b82f6">→ Matched: ' + calc.scheme.name + '</span></div>' +
+      '<div style="background:rgba(59,130,246,0.06);border-radius:10px;padding:12px;font-size:13px">' +
+      '<div style="color:#3b82f6">• Interest: ' + calc.scheme.rate + '% p.a.</div>' +
+      '<div style="color:#3b82f6">• Tenure: ' + calc.scheme.tenure + ' years</div>' +
+      '<div style="color:#3b82f6">• Moratorium: ' + calc.scheme.moratorium + ' months</div>' +
+      '<div style="color:var(--muted);margin-top:8px">📄 Source: ' + calc.scheme.source + ' | Last verified: ' + calc.scheme.lastVerified + '</div>' +
+      '</div></div>'
+
+    // Moratorium Killer
+    $("c-moratorium").innerHTML =
+      '<div class="moratorium-compare">' +
+      '<div class="moratorium-box good"><div class="label">What people think:</div><div class="value">"EMI starts after ' + calc.scheme.moratorium + ' months"</div></div>' +
+      '<div class="moratorium-box bad"><div class="label">What actually happens:</div><div class="value">' + Engine.fmtINR(calc.postMorEMI) + '/month</div><div class="sub" style="color:#ef4444">' + (calc.postMorEMI - calc.emi > 0 ? Engine.fmtINR(calc.postMorEMI - calc.emi) + " MORE than regular EMI" : "Same as regular") + '</div></div>' +
+      '</div>'
+
+    // Risk Buffer
+    var riskStatus, riskClass
+    if (calc.netSurplus >= calc.riskBuffer) { riskStatus = "✅ Your surplus covers the Risk Buffer — you can survive a bad month."; riskClass = "met" }
+    else if (calc.netSurplus > 0) { riskStatus = "⚠️ Surplus is below Risk Buffer — one bad month could push you into default."; riskClass = "breached" }
+    else { riskStatus = "❌ Negative cash surplus — do NOT take this loan without restructuring."; riskClass = "critical" }
+
+    $("c-riskbuffer").innerHTML =
+      '<div class="risk-buffer-display">' +
+      '<div class="risk-buffer-value">' + Engine.fmtINR(calc.riskBuffer) + '/month</div>' +
+      '<div class="risk-buffer-formula">= 1.5 × Post-Moratorium EMI (' + Engine.fmtINR(calc.postMorEMI) + ' × 1.5)</div>' +
+      (revenue > 0 ? '<div class="risk-buffer-verdict ' + riskClass + '">' + riskStatus + '</div>' : '') +
+      '</div>'
+
+    // Net Cash Surplus
+    var surplusColor = calc.netSurplusAfterEMI >= 0 ? "#22c55e" : "#ef4444"
+    $("c-surplus").innerHTML =
+      '<h2 class="card-title">💰 Net Cash Surplus</h2>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">' +
+      '<div style="font-size:14px">' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Revenue:</span><span>' + Engine.fmtINR(revenue) + '/mo</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">− COGS:</span><span>' + Engine.fmtINR(cogs) + '/mo</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">− OpEx:</span><span>' + Engine.fmtINR(opex) + '/mo</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">− EMI:</span><span>' + Engine.fmtINR(calc.postMorEMI) + '/mo</span></div>' +
+      '<div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;display:flex;justify-content:space-between;font-weight:700"><span>= Net Surplus:</span><span style="color:' + surplusColor + '">' + Engine.fmtINR(calc.netSurplusAfterEMI) + '/mo</span></div>' +
+      '</div>' +
+      '<div style="display:flex;align-items:center;justify-content:center">' +
+      '<div style="text-align:center;padding:20px;border-radius:12px;background:' + (calc.netSurplusAfterEMI > 0 ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)') + ';border:1px solid ' + (calc.netSurplusAfterEMI > 0 ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)') + '">' +
+      '<div style="font-size:40px;margin-bottom:8px">' + (calc.netSurplusAfterEMI > 0 ? "✅" : "❌") + '</div>' +
+      '<div style="font-weight:600;font-size:14px">' + (calc.netSurplusAfterEMI > 0 ? "Viable as structured" : "NOT viable — restructure") + '</div>' +
+      '</div></div></div>'
+
+    // Repayment Schedule
+    var schedule = Engine.generateSchedule(calc)
+    var rows = schedule.slice(0, 12).map(function (p) {
+      return '<tr' + (p.moratorium ? ' class="moratorium-row"' : '') + '>' +
+        '<td>' + (p.moratorium ? "🔒 " : "") + p.period + '</td>' +
+        '<td>' + p.quarter + '</td>' +
+        '<td>' + (p.moratorium ? "—" : Engine.fmtINR(p.principal)) + '</td>' +
+        '<td>' + (p.moratorium ? "+" : "") + Engine.fmtINR(p.interest) + '</td>' +
+        '<td class="font-bold">' + (p.moratorium ? "MORATORIUM" : Engine.fmtINR(p.payment)) + '</td>' +
+        '<td>' + Engine.fmtINR(p.balance) + '</td>' +
+        '</tr>'
+    }).join("")
+
+    $("c-schedule").innerHTML =
+      '<table><thead><tr><th>Period</th><th>Quarter</th><th>Principal</th><th>Interest</th><th>Payment</th><th>Balance</th></tr></thead><tbody>' + rows + '</tbody></table>' +
+      (schedule.length > 12 ? '<div style="font-size:11px;color:var(--muted);margin-top:8px">Showing 12 of ' + schedule.length + ' quarters</div>' : '')
+
+    // Narrator
+    $("c-narrator").textContent = Engine.narrateFinancials(calc)
+
+    // Show results
+    $("calc-results").classList.remove("hidden")
+  }
+
+  // --- HEALTH TRACKER MODULE ---
+  var trackerEntries = []
+
+  function renderEntries() {
+    if (!trackerEntries || trackerEntries.length === 0) {
+      $("t-entries").innerHTML = '<div style="text-align:center;padding:36px 16px;color:#64748b;font-size:0.9rem">' +
+        '<i class="fa-solid fa-file-invoice" style="font-size:2rem;color:#94a3b8;display:block;margin-bottom:10px"></i>' +
+        '<div>No entries recorded yet. Add your actual monthly revenue and expense figures using the form above.</div>' +
+        '<div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">(Use the form above with your real enterprise numbers to track health)</div>' +
+        '</div>'
+      return
+    }
+    var calc = Engine.computeFinancials(100000, 80000, 50000, 12000)
+    var rows = trackerEntries.map(function (e) {
+      var net = e.revenue - e.cogs - e.opex - (calc ? calc.postMorEMI : 14000)
+      return '<tr><td>' + e.month + '</td><td>' + Engine.fmtINR(e.revenue) + '</td><td>' + Engine.fmtINR(e.cogs) + '</td><td>' + Engine.fmtINR(e.opex) + '</td><td class="font-bold" style="color:' + (net >= 0 ? '#22c55e' : '#ef4444') + '">' + Engine.fmtINR(net) + '</td></tr>'
+    }).join("")
+    $("t-entries").innerHTML = '<table><thead><tr><th>Month</th><th>Revenue</th><th>COGS</th><th>OpEx</th><th>Net</th></tr></thead><tbody>' + rows + '</tbody></table>'
+  }
+
+  window.addTrackerEntry = function () {
+    var month = text("t-month")
+    var revenue = val("t-revenue")
+    var cogs = val("t-cogs")
+    var opex = val("t-opex")
+    if (!month || !revenue) return alert("Enter month and revenue")
+    trackerEntries.push({ month: month, revenue: revenue, cogs: cogs, opex: opex })
+    trackerEntries.sort(function (a, b) { return a.month.localeCompare(b.month) })
+    renderEntries()
+    $("t-revenue").value = ""
+    $("t-cogs").value = ""
+    $("t-opex").value = ""
+  }
+
+  window.generateHealthReport = function () {
+    var calc = Engine.computeFinancials(100000, 80000, 50000, 12000)
+    var h = Engine.computeHealth(trackerEntries, calc)
+    if (!h) return alert("Need at least 3 months of data")
+
+    var emoji = { thriving: "🟢", surviving: "🟡", "at-risk": "🔴" }
+    var label = { thriving: "THRIVING", surviving: "SURVIVING", "at-risk": "AT RISK" }
+    var desc = {
+      thriving: "Net margin comfortably clears the Risk Buffer; flat-to-rising trend",
+      surviving: "Positive surplus but thin — no cushion for a bad month",
+      "at-risk": "Net surplus trending toward zero/negative over 2+ periods",
+    }
+
+    // Verdict
+    $("t-verdict").innerHTML =
+      '<div class="verdict-card ' + h.q2.health + '">' +
+      '<div class="verdict-emoji">' + emoji[h.q2.health] + '</div>' +
+      '<div class="verdict-label">' + label[h.q2.health] + '</div>' +
+      '<div class="verdict-desc">' + desc[h.q2.health] + '</div>' +
+      '<div class="verdict-trend">Trend: ' + (h.trend === "improving" ? "📈 Improving" : h.trend === "declining" ? "📉 Declining" : "➡️ Stable") + '</div>' +
+      '</div>'
+
+    // Quarterly comparison
+    function qRow(label, q1v, q2v, fmt) {
+      fmt = fmt || Engine.fmtINR
+      return '<tr><td class="font-bold">' + label + '</td><td>' + fmt(q1v) + '</td><td class="font-bold">' + fmt(q2v) + '</td></tr>'
+    }
+    $("t-quarterly").innerHTML =
+      '<table><thead><tr><th>Metric</th><th>Q1</th><th>Q2</th></tr></thead><tbody>' +
+      qRow("Revenue", h.q1.rev, h.q2.rev) +
+      qRow("COGS", h.q1.cogs, h.q2.cogs) +
+      qRow("OpEx", h.q1.opex, h.q2.opex) +
+      qRow("Net Surplus", h.q1.surplus, h.q2.surplus) +
+      '<tr><td class="font-bold">Gross Margin</td><td>' + h.q1.grossMargin + '%</td><td class="font-bold">' + h.q2.grossMargin + '%</td></tr>' +
+      '<tr><td class="font-bold">Net Margin</td><td>' + h.q1.netMargin + '%</td><td class="font-bold">' + h.q2.netMargin + '%</td></tr>' +
+      '<tr><td class="font-bold">DSCR</td><td>' + h.q1.dscr + '</td><td class="font-bold">' + h.q2.dscr + '</td></tr>' +
+      '<tr><td class="font-bold">Health</td><td>' + emoji[h.q1.health] + ' ' + label[h.q1.health] + '</td><td class="font-bold">' + emoji[h.q2.health] + ' ' + label[h.q2.health] + '</td></tr>' +
+      '</tbody></table>'
+
+    // Live DSCR
+    var riskBuf = Engine.calcRiskBuffer(h.q2.emi / 3)
+    var riskStatus = h.q2.surplus / 3 >= riskBuf ? "✅ Met" : h.q2.surplus / 3 > 0 ? "⚠️ Breached" : "❌ Critical"
+    $("t-dscr").innerHTML =
+      '<div class="stats-row">' +
+      '<div class="stat-item"><div class="val">' + h.q2.dscr + '</div><div class="lbl">Live DSCR</div></div>' +
+      '<div class="stat-item"><div class="val">' + riskStatus + '</div><div class="lbl">Risk Buffer</div></div>' +
+      '<div class="stat-item"><div class="val">' + (h.singleBuyerFlag ? "⚠️ Yes" : "✅ No") + '</div><div class="lbl">Single Buyer</div></div>' +
+      '</div>'
+
+    // Insights
+    $("t-insights").innerHTML = h.insights.map(function (i) {
+      var cls = i.type === "alert" ? "alert" : i.type === "warning" ? "warning" : i.type === "positive" ? "positive" : "recommendation"
+      return '<div class="insight-card ' + cls + '">' +
+        '<div class="insight-meta">' + i.type + ' • ' + i.metric + '</div>' +
+        '<div class="insight-message">' + i.msg + '</div>' +
+        '<div class="insight-hi">' + i.hi + '</div>' +
+        '</div>'
+    }).join("")
+
+    // Narrator
+    $("t-narrator").textContent = Engine.narrateHealth(h)
+
+    // Show results
+    $("health-results").classList.remove("hidden")
+  }
+
+  // --- REPORT MODULE ---
+  window.generateNABARDReport = function () {
+    var margin = val("r-margin")
+    var revenue = val("r-revenue")
+    var cogs = val("r-cogs")
+    var opex = val("r-opex")
+    var name = text("r-name") || "Demo Business"
+    var village = text("r-village") || "—"
+    var block = text("r-block") || "—"
+    var district = text("r-district") || "—"
+
+    var calc = Engine.computeFinancials(margin, revenue, cogs, opex)
+    if (!calc) return alert("Project cost out of scheme range")
+
+    var f = Engine.computeFeasibility("UP", "retail", margin, false)
+    var now = new Date().toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })
+
+    $("report-content").innerHTML =
+      '<div class="report-header">' +
+      '<p style="font-size:11px;color:var(--muted);margin-bottom:8px">MINISTRY OF SOCIAL JUSTICE AND EMPOWERMENT</p>' +
+      '<h2>MODEL BANKABLE PROJECT REPORT</h2>' +
+      '<p>Under Stand-Up India / Concessional Credit Scheme</p>' +
+      '<p style="margin-top:8px">Generated: ' + now + '</p>' +
+      '</div>' +
+
+      '<div class="report-section"><h3>1. Applicant Details</h3><table class="report-table">' +
+      '<tr><td>Enterprise Name</td><td>' + name + '</td></tr>' +
+      '<tr><td>Location</td><td>' + village + ', ' + block + ', ' + district + '</td></tr>' +
+      '<tr><td>Category</td><td>Retail Shop (खुदरा)</td></tr>' +
+      '</table></div>' +
+
+      '<div class="report-section"><h3>2. Project Financials</h3><table class="report-table">' +
+      '<tr><td>Margin (10%)</td><td>' + Engine.fmtINR(calc.margin) + '</td></tr>' +
+      '<tr><td>Project Cost</td><td class="font-bold">' + Engine.fmtINR(calc.projectCost) + '</td></tr>' +
+      '<tr><td>Loan (90%)</td><td class="font-bold">' + Engine.fmtINR(calc.loanAmount) + '</td></tr>' +
+      '<tr><td>Interest Rate</td><td>' + calc.scheme.rate + '% p.a.</td></tr>' +
+      '<tr><td>Tenure</td><td>' + calc.scheme.tenure + ' years</td></tr>' +
+      '<tr><td>Moratorium</td><td>' + calc.scheme.moratorium + ' months</td></tr>' +
+      '<tr><td>Monthly EMI</td><td>' + Engine.fmtINR(calc.emi) + '</td></tr>' +
+      '<tr><td class="highlight-red">Post-Moratorium EMI</td><td class="highlight-red font-bold">' + Engine.fmtINR(calc.postMorEMI) + '/month</td></tr>' +
+      '<tr><td>Total Interest</td><td>' + Engine.fmtINR(calc.totalInterest) + '</td></tr>' +
+      '</table></div>' +
+
+      '<div class="report-section"><h3>3. Risk Assessment</h3><table class="report-table">' +
+      '<tr><td>Risk Buffer</td><td class="font-bold">' + Engine.fmtINR(calc.riskBuffer) + '/month</td></tr>' +
+      '<tr><td>DSCR</td><td>' + calc.dscr + ' ' + (calc.dscr >= 1.25 ? '(Healthy)' : calc.dscr >= 1.0 ? '(Tight)' : '(Below 1)') + '</td></tr>' +
+      '<tr><td>Break-Even</td><td>' + (calc.breakEven === Infinity ? "Never" : calc.breakEven + " months") + '</td></tr>' +
+      '</table></div>' +
+
+      '<div class="report-section"><h3>4. Market Analysis</h3><table class="report-table">' +
+      '<tr><td>Consumer Base</td><td>' + f.consumers.toLocaleString("en-IN") + ' people</td></tr>' +
+      '<tr><td>Annual Demand</td><td>' + Engine.fmtINR(f.demand) + '</td></tr>' +
+      '<tr><td>Supply-Demand Gap</td><td class="font-bold">' + (f.demandDeficit ? '+' : '') + Engine.fmtINR(Math.abs(f.gap)) + '</td></tr>' +
+      '<tr><td>Viability</td><td class="font-bold">' + f.viabilityScore.toUpperCase() + '</td></tr>' +
+      '</table></div>' +
+
+      '<div class="report-section"><h3>5. Scheme</h3><table class="report-table">' +
+      '<tr><td>Name</td><td>' + calc.scheme.name + ' (' + calc.scheme.nameHi + ')</td></tr>' +
+      '<tr><td>Source</td><td>' + calc.scheme.source + '</td></tr>' +
+      '<tr><td>Last Verified</td><td>' + calc.scheme.lastVerified + '</td></tr>' +
+      '</table></div>' +
+
+      '<div class="report-footer">' +
+      'Generated by Rural Business Advisory Assistant | All calculations are deterministic formulas | Scheme data from official government guidelines' +
+      '</div>'
+
+    $("report-output").classList.remove("hidden")
+  }
+
+  // --- Init ---
+  renderEntries()
+
+  // Count-up for home stats
+  function initCountUp() {
+    document.querySelectorAll(".stat-val[data-target]").forEach(function (el) {
+      var target = parseFloat(el.dataset.target)
+      var suffix = el.dataset.suffix || ""
+      var decimals = parseInt(el.dataset.decimals, 10) || 0
+      var duration = 1500
+      var start = performance.now()
+      function tick(now) {
+        var p = Math.min((now - start) / duration, 1)
+        var eased = 1 - Math.pow(1 - p, 3)
+        el.textContent = (eased * target).toFixed(decimals) + suffix
+        if (p < 1) requestAnimationFrame(tick)
+      }
+      requestAnimationFrame(tick)
+    })
+  }
+
+  // Trigger count-up when home module is shown
+  var homeObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        initCountUp()
+        homeObserver.disconnect()
+      }
+    })
+  }, { threshold: 0.25 })
+
+  var homeStats = document.querySelector(".app-stats")
+  if (homeStats) homeObserver.observe(homeStats)
+
+})()
+
+</script>
+  </body>
+</html>

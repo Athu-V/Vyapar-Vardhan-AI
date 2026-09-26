@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्राम व्यापार सहायक (Rural Business Advisory Assistant)</title>
+    <meta name="description" content="AI-driven hyper-local business advisory and financial structuring assistant for rural micro-entrepreneurs." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body class="app-body">
+    <!-- Ambient Canvas Background -->
+    <div class="bg"></div>
+
+    <!-- App Shell -->
+    <div class="app-shell">
+      <!-- Sidebar Nav -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="sidebar-logo" title="Home">
+            <img src="assets/logo.svg" alt="Logo" width="40" height="40" />
+          </a>
+          <div class="sidebar-brand">
+            <span class="brand-name">ग्राम व्यापार</span>
+            <span class="brand-sub" id="txt-brand-sub">ग्रामीण उद्यमी सहायक (Rural Advisory)</span>
+          </div>
+        </div>
+
+        <div class="sidebar-lang-picker" role="group" aria-label="Language selection">
+          <button type="button" class="sidebar-lang-btn active" data-app-lang="hi" title="हिंदी">हिंदी</button>
+          <button type="button" class="sidebar-lang-btn" data-app-lang="mr" title="मराठी">मराठी</button>
+          <button type="button" class="sidebar-lang-btn" data-app-lang="en" title="English">EN</button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button class="sidebar-link active" data-module="home">
+            <i class="fa-solid fa-house"></i>
+            <span id="nav-home">होम (Home)</span>
+          </button>
+          <button class="sidebar-link" data-module="feasibility">
+            <i class="fa-solid fa-chart-line"></i>
+            <span id="nav-feasibility">मार्केट रिपोर्ट (Feasibility)</span>
+          </button>
+          <button class="sidebar-link" data-module="calculator">
+            <i class="fa-solid fa-calculator"></i>
+            <span id="nav-calculator">लोन कैलकुलेटर (Calculator)</span>
+          </button>
+          <button class="sidebar-link" data-module="tracker">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span id="nav-tracker">बिजनेस हेल्थ (Health Tracker)</span>
+          </button>
+          <button class="sidebar-link" data-module="report">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span id="nav-report">सरकारी रिपोर्ट (NABARD Report)</span>
+          </button>
+          <a href="index.html" class="sidebar-link" id="returnToChatLink" style="margin-top: 14px; border: 1px solid rgba(22, 163, 74, 0.4); background: rgba(22, 163, 74, 0.08); color: #15803d;">
+            <i class="fa-solid fa-comments"></i>
+            <span id="nav-chat">AI मित्र चैट (AI Mitra Chat)</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="arch-badge">
+            <div class="arch-dot green"></div>
+            <span id="txt-badge-formulas">सटीक फॉर्मूला (Formulas)</span>
+          </div>
+          <div class="arch-badge">
+            <div class="arch-dot blue"></div>
+            <span id="txt-badge-rules">सरकारी नियम (Rules)</span>
+          </div>
+          <div class="arch-badge">
+            <div class="arch-dot amber"></div>
+            <span id="txt-badge-narrator">AI व्याख्याकार (Narrator)</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
+        <span class="mobile-title">ग्राम व्यापार सहायक (Rural Advisory)</span>
+        <div style="width:36px"></div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content" id="mainContent">
+
+        <!-- ==================== HOME MODULE ==================== -->
+        <section class="module active" id="module-home">
+          <div class="module-inner">
+            <!-- Hero -->
+            <div class="app-hero">
+              <div class="trust-row">
+                <span class="trust-pill" id="txt-home-backed" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fa-solid fa-landmark"></i> MoSJE • NABARD • PMEGP • MUDRA Guidelines</span>
+              </div>
+
+              <h1 class="app-headline">
+                <span class="hl" id="txt-home-hl1">ग्रामीण उद्यम के लिए (For Rural Enterprise)</span>
+                <span class="hl" id="txt-home-hl2">आधुनिक इंटेलिजेंस (Modern Intelligence)</span>
+              </h1>
+
+              <p class="app-subhead" id="txt-home-subhead">
+                हम केवल यह नहीं बताते कि आप लोन के पात्र हैं या नहीं: हम यह सुनिश्चित करते हैं कि आपका व्यवसाय चले, और हर महीने मुनाफे में रहे। (We verify loan eligibility and ensure ongoing monthly profitability.)
+              </p>
+
+              <div class="app-cta-row">
+                <button class="cta" onclick="switchModule('calculator')">
+                  <i class="fa-solid fa-calculator"></i> <span id="txt-home-calcbtn">लोन व ईएमआई निकालें (Calculate Loan & EMI)</span>
+                </button>
+                <button class="cta-secondary" onclick="switchModule('feasibility')">
+                  <i class="fa-solid fa-chart-line"></i> <span id="txt-home-feasbtn">बाज़ार मांग जांचें (Check Feasibility)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="app-stats">
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <div class="stat-val" data-target="30" data-suffix=" लाख करोड़" data-decimals="0">0</div>
+                <div class="stat-lbl" id="txt-stat-creditgap">क्रेडिट गैप (Credit Gap)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-industry"></i></div>
+                <div class="stat-val" data-target="7.61" data-suffix=" करोड़" data-decimals="2">0</div>
+                <div class="stat-lbl" id="txt-stat-msme">पंजीकृत एमएसएमई (MSMEs Registered)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="stat-val" data-target="27" data-suffix="%" data-decimals="0">0</div>
+                <div class="stat-lbl" id="txt-stat-finlit">वित्तीय साक्षरता (Financially Literate)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="stat-val" data-target="24.6" data-suffix="%" data-decimals="1">0</div>
+                <div class="stat-lbl" id="txt-stat-women">ग्रामीण महिलाएं ऑनलाइन (Rural Women Online)</div>
+              </div>
+            </div>
+
+            <!-- Architecture -->
+            <div class="arch-section">
+              <h2 class="section-title" id="txt-arch-title">विश्वसनीय त्रि-स्तरीय प्रणाली (Three-Way Architecture)</h2>
+              <p class="section-subtitle" id="txt-arch-subtitle">प्रत्येक परिणाम अपने स्रोत को स्पष्ट रूप से दर्शाता है - पारदर्शी और भरोसेमंद (Transparent and defensible outputs).</p>
+              <div class="arch-grid">
+                <div class="arch-card deterministic">
+                  <div class="arch-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></div>
+                  <h3 id="txt-arch-card1-t">सटीक फॉर्मूले (Deterministic Formulas)</h3>
+                  <p id="txt-arch-card1-d">EMI, DSCR, ब्रेक-इवन (Break-Even), रिस्क बफर (Risk Buffer), शुद्ध मासिक बचत (Net Cash Surplus) - वित्तीय रूप से सटीक, कोई अनुमान नहीं।</p>
+                </div>
+                <div class="arch-card rules">
+                  <div class="arch-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+                  <h3 id="txt-arch-card2-t">सरकारी नियम (Rules Engine)</h3>
+                  <p id="txt-arch-card2-d">योजना पात्रता (Scheme Eligibility), ऑटो-रूटिंग (Auto-Routing), स्वास्थ्य वर्गीकरण (Health Classification) - आधिकारिक सरकारी नियमों के अनुसार।</p>
+                </div>
+                <div class="arch-card llm">
+                  <div class="arch-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></div>
+                  <h3 id="txt-arch-card3-t">AI व्याख्याकार (Vernacular Narrator)</h3>
+                  <p id="txt-arch-card3-d">आपकी मातृभाषा में आसान समझाइश। कभी कोई झूठा आंकड़ा नहीं बनाता - केवल कैलकुलेटर का परिणाम बताता है।</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEASIBILITY MODULE ==================== -->
+        <section class="module" id="module-feasibility">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title" id="txt-feas-title">बाज़ार मांग व व्यवहार्यता रिपोर्ट (Market Feasibility Report)</h1>
+              <p class="module-desc" id="txt-feas-desc">Census × NSSO प्रॉक्सी डेटा आधारित सटीक स्थानीय बाज़ार मांग विश्लेषण। (Proxy-data market demand estimation using Census × NSSO).</p>
+            </div>
+
+            <!-- Input Form -->
+            <div class="card">
+              <h2 class="card-title" id="txt-feas-form-title">स्थान व व्यवसाय विवरण (Location & Business Details)</h2>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label id="lbl-f-village">गाँव (Village)</label>
+                  <input type="text" id="f-village" placeholder="जैसे, रामगढ़ (Ramgarh)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-f-block">ब्लॉक (Block)</label>
+                  <input type="text" id="f-block" placeholder="जैसे, सदर (Sadar)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-f-district">जिला (District)</label>
+                  <input type="text" id="f-district" placeholder="जैसे, लखनऊ / पुणे (District)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-f-state">राज्य (State)</label>
+                  <select id="f-state" class="input">
+                    <option value="UP">उत्तर प्रदेश (Uttar Pradesh)</option>
+                    <option value="Bihar">बिहार (Bihar)</option>
+                    <option value="MP">मध्य प्रदेश (Madhya Pradesh)</option>
+                    <option value="Maharashtra" selected>महाराष्ट्र (Maharashtra)</option>
+                    <option value="Rajasthan">राजस्थान (Rajasthan)</option>
+                    <option value="WestBengal">पश्चिम बंगाल (West Bengal)</option>
+                    <option value="TamilNadu">तमिलनाडु (Tamil Nadu)</option>
+                    <option value="Karnataka">कर्नाटक (Karnataka)</option>
+                    <option value="Gujarat">गुजरात (Gujarat)</option>
+                    <option value="Odisha">ओडिशा (Odisha)</option>
+                    <option value="DEFAULT">अन्य (Other)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label id="lbl-f-category">व्यवसाय श्रेणी (Business Category)</label>
+                  <select id="f-category" class="input">
+                    <option value="dairy">डेयरी फार्मिंग (Dairy & Allied)</option>
+                    <option value="retail" selected>खुदरा / किराना दुकान (Retail Shop)</option>
+                    <option value="tailoring">सिलाई व बुटीक (Tailoring & Garments)</option>
+                    <option value="agri-processing">कृषि प्रसंस्करण (Agri-Processing)</option>
+                    <option value="small-manufacturing">लघु उद्योग (Small Manufacturing)</option>
+                    <option value="services">सेवाएं व रिपेयर (Services & Repair)</option>
+                    <option value="trading">व्यापार (Trading)</option>
+                    <option value="other">अन्य व्यवसाय (Other)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label id="lbl-f-margin">मार्जिन पूँजी (Margin Capital - ₹)</label>
+                  <input type="number" id="f-margin" placeholder="उदा. 1,00,000 (e.g. 100000)" class="input" />
+                </div>
+              </div>
+
+              <!-- Single Buyer Question -->
+              <div class="warning-box">
+                <div class="warning-title" id="txt-feas-buyer-q">महत्वपूर्ण जांच: "क्या आप सिर्फ 1 बड़े खरीदार को माल बेचेंगे या अलग-अलग ग्राहकों को?" (Single Buyer Dependency Check)</div>
+                <div class="radio-row">
+                  <label class="radio-label"><input type="radio" name="f-buyer" value="0" checked /> <span id="opt-f-buyer-multi">कई खरीदार - सुरक्षित (Multiple Buyers - Safe)</span></label>
+                  <label class="radio-label"><input type="radio" name="f-buyer" value="1" /> <span id="opt-f-buyer-single">एकल खरीदार - जोखिम (Single Buyer - Risky)</span></label>
+                </div>
+              </div>
+
+              <button class="btn-primary" onclick="generateFeasibility()">
+                <span id="btn-feas-generate">व्यवहार्यता रिपोर्ट तैयार करें (Generate Feasibility Report)</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Results (hidden initially) -->
+            <div id="feasibility-results" class="hidden">
+              <!-- Market Analysis -->
+              <div class="card attr-deterministic">
+                <div class="attr-badge green" id="txt-feas-badge-det"><i class="fa-solid fa-calculator"></i> सटीक गणना (Deterministic Proxy Data)</div>
+                <h2 class="card-title" id="txt-feas-market-title">बाज़ार मांग विश्लेषण (Market Analysis)</h2>
+                <div class="methodology-box" id="txt-feas-methodology">
+                  <strong>पद्धति (Methodology):</strong> स्थानीय मांग = जनसंख्या (Census) × प्रति व्यक्ति औसत उपभोग (NSSO)। आपूर्ति = पशुधन गणना + उद्यम डेटा।
+                </div>
+                <div class="stats-row" id="f-market-stats"></div>
+              </div>
+
+              <!-- SWOT -->
+              <div class="card" id="f-swot"></div>
+
+              <!-- Viability -->
+              <div class="card" id="f-viability"></div>
+
+              <!-- Warnings -->
+              <div id="f-warnings"></div>
+
+              <!-- LLM Narrator -->
+              <div class="card attr-llm">
+                <div class="attr-badge amber" id="txt-feas-badge-narr"><i class="fa-solid fa-language"></i> AI व्याख्याकार (Vernacular Narrator)</div>
+                <div id="f-narrator" class="narrator-text"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== CALCULATOR MODULE ==================== -->
+        <section class="module" id="module-calculator">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title" id="txt-calc-title">लोन व वित्तीय कैलकुलेटर (Loan & Financial Calculator)</h1>
+              <p class="module-desc" id="txt-calc-desc">मार्जिन राशि → प्रोजेक्ट लागत → लोन → EMI → रिस्क बफर → शुद्ध मासिक बचत (Margin → Project Cost → Loan → EMI → Risk Buffer → Net Cash Surplus)</p>
+            </div>
+
+            <!-- Input -->
+            <div class="card">
+              <h2 class="card-title" id="txt-calc-form-title">व्यवसाय की जानकारी दर्ज करें (Business Details Onboarding)</h2>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label id="lbl-c-margin">मार्जिन पूँजी (Margin Capital - ₹)</label>
+                  <input type="number" id="c-margin" placeholder="उदा. 1,00,000 (e.g. 100000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-c-cat">व्यवसाय श्रेणी (Business Category)</label>
+                  <select id="c-category" class="input">
+                    <option value="dairy">डेयरी फार्मिंग (Dairy)</option>
+                    <option value="retail" selected>खुदरा / किराना दुकान (Retail Shop)</option>
+                    <option value="tailoring">सिलाई केंद्र (Tailoring)</option>
+                    <option value="agri-processing">कृषि प्रसंस्करण (Agri-Processing)</option>
+                    <option value="small-manufacturing">लघु उद्योग (Manufacturing)</option>
+                    <option value="services">सेवाएं (Services)</option>
+                    <option value="trading">व्यापार (Trading)</option>
+                    <option value="other">अन्य (Other)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label id="lbl-c-rev">मासिक आय (Monthly Revenue - ₹)</label>
+                  <input type="number" id="c-revenue" placeholder="उदा. 80,000 (e.g. 80000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-c-cogs">माल की लागत (Monthly COGS - ₹)</label>
+                  <input type="number" id="c-cogs" placeholder="उदा. 50,000 (e.g. 50000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-c-opex">मासिक खर्च (Monthly OpEx - ₹)</label>
+                  <input type="number" id="c-opex" placeholder="उदा. 12,000 (e.g. 12000)" class="input" />
+                </div>
+              </div>
+              <button class="btn-primary" onclick="calculateFinancials()">
+                <span id="btn-calc-submit">वित्तीय गणना करें (Calculate Financials)</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Results -->
+            <div id="calc-results" class="hidden">
+              <!-- Step 1: Deterministic -->
+              <div class="card attr-deterministic">
+                <div class="attr-badge green" id="txt-calc-step1-badge"><i class="fa-solid fa-calculator" aria-hidden="true"></i> चरण 1: सटीक वित्तीय गणना (Step 1: Deterministic Calculations)</div>
+                <div class="calc-grid" id="c-step1"></div>
+              </div>
+
+              <!-- Step 2: Rules -->
+              <div class="card attr-rules">
+                <div class="attr-badge blue" id="txt-calc-step2-badge"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> चरण 2: सरकारी नियम इंजन - योजना का चयन (Step 2: Rules Engine - Scheme Selection)</div>
+                <div id="c-step2"></div>
+              </div>
+
+              <!-- Moratorium Killer -->
+              <div class="card warning-critical">
+                <div class="card-title" id="txt-calc-morat-title"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> मोरेटोरियम का छिपा सच (The Silent Moratorium Reality)</div>
+                <p class="card-desc" id="txt-calc-morat-desc">छूट की अवधि में ब्याज जुड़ता रहता है। "6 महीने कोई किश्त नहीं" का मतलब ब्याज माफी नहीं है। (Interest continues compounding during moratorium.)</p>
+                <div class="moratorium-compare" id="c-moratorium"></div>
+              </div>
+
+              <!-- Risk Buffer -->
+              <div class="card warning-orange">
+                <div class="card-title" id="txt-calc-buffer-title"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> सुरक्षा बफर (Risk Buffer) - सबसे महत्वपूर्ण आंकड़ा</div>
+                <p class="card-desc" id="txt-calc-buffer-desc">न्यूनतम आवश्यक मासिक मुनाफा ताकि किसी मंदी के महीने में भी EMI सुरक्षित रहे। (Minimum monthly profit to safely service debt in bad months.)</p>
+                <div id="c-riskbuffer"></div>
+              </div>
+
+              <!-- Net Cash Surplus -->
+              <div class="card" id="c-surplus"></div>
+
+              <!-- Repayment Schedule -->
+              <div class="card">
+                <div class="card-title" id="txt-calc-sched-title"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> तिमाही लोन भुगतान सारणी (Quarterly Repayment Schedule)</div>
+                <div class="table-wrap" id="c-schedule"></div>
+              </div>
+
+              <!-- LLM Narrator -->
+              <div class="card attr-llm">
+                <div class="attr-badge amber" id="txt-calc-narr-badge"><i class="fa-solid fa-language"></i> AI व्याख्याकार (Vernacular Narrator)</div>
+                <div id="c-narrator" class="narrator-text"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== HEALTH TRACKER MODULE ==================== -->
+        <section class="module" id="module-tracker">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title" id="txt-track-title">बिजनेस हेल्थ ट्रैकर (Business Health Tracker)</h1>
+              <p class="module-desc" id="txt-track-desc">मासिक प्रविष्टि → तिमाही विश्लेषण → सुरक्षित / सामान्य / जोखिम में स्थिति। (Monthly logging → Quarterly aggregation → Health classification).</p>
+            </div>
+
+            <!-- Passive Capture Info -->
+            <div class="info-box">
+              <div class="info-title" id="txt-track-pass-title"><i class="fa-solid fa-mobile-screen"></i> आसान प्रविष्टि सुविधा (Passive Data Capture)</div>
+              <p id="txt-track-pass-desc">व्हाट्सएप या वॉयस कॉल के जरिए भी जानकारी जोड़ी जा सकती है। यदि एक दिन छूट भी जाए तो ट्रैकर काम करता रहेगा।</p>
+            </div>
+
+            <!-- Data Entry -->
+            <div class="card">
+              <h2 class="card-title" id="txt-track-form-title">मासिक कमाई व खर्च प्रविष्टि (Monthly Revenue & Expense Entry)</h2>
+              <div class="form-grid cols-4">
+                <div class="form-group">
+                  <label id="lbl-t-month">महीना (Month)</label>
+                  <input type="month" id="t-month" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-t-rev">आय (Revenue - ₹)</label>
+                  <input type="number" id="t-revenue" placeholder="उदा. 80,000 (e.g. 80000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-t-cogs">माल की लागत (COGS - ₹)</label>
+                  <input type="number" id="t-cogs" placeholder="उदा. 50,000 (e.g. 50000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-t-opex">खर्च (OpEx - ₹)</label>
+                  <input type="number" id="t-opex" placeholder="उदा. 12,000 (e.g. 12000)" class="input" />
+                </div>
+              </div>
+              <div class="btn-row">
+                <button class="btn-secondary" onclick="addTrackerEntry()">
+                  <span id="btn-t-add">+ प्रविष्टि जोड़ें (+ Add Entry)</span>
+                </button>
+                <button class="btn-primary" onclick="generateHealthReport()">
+                  <span id="btn-t-rep">हेल्थ रिपोर्ट निकालें (Generate Health Report)</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Entries Table -->
+            <div class="card">
+              <h2 class="card-title" id="txt-track-tbl-title">मासिक दर्ज प्रविष्टियां (Monthly Logged Entries)</h2>
+              <div class="table-wrap" id="t-entries"></div>
+            </div>
+
+            <!-- Health Report -->
+            <div id="health-results" class="hidden">
+              <!-- Verdict -->
+              <div id="t-verdict"></div>
+
+              <!-- Quarterly Comparison -->
+              <div class="card">
+                <div class="card-title" id="txt-track-qtr-title">तिमाही तुलनात्मक विश्लेषण (Quarterly Comparison Analysis)</div>
+                <div class="table-wrap" id="t-quarterly"></div>
+              </div>
+
+              <!-- Live DSCR -->
+              <div class="card attr-deterministic">
+                <div class="attr-badge green" id="txt-track-dscr-badge"><i class="fa-solid fa-calculator"></i> कर्ज चुकाने की वास्तविक क्षमता (Live DSCR Recomputation)</div>
+                <div id="t-dscr"></div>
+              </div>
+
+              <!-- Insights -->
+              <div class="card">
+                <div class="card-title" id="txt-track-ins-title">स्वचालित वित्तीय सलाह (Automated Financial Insights)</div>
+                <p class="card-desc" id="txt-track-ins-desc">प्रत्येक सुझाव सीधे आपके वास्तविक आंकड़ों पर आधारित है।</p>
+                <div id="t-insights"></div>
+              </div>
+
+              <!-- NABARD Preview -->
+              <div class="card">
+                <div class="card-title" id="txt-track-bank-title">बैंक स्वीकृत रिपोर्ट प्रारूप (Bank-Acceptable Output)</div>
+                <p class="card-desc" id="txt-track-bank-desc">नाबार्ड मॉडल बैंकेबल प्रोजेक्ट रिपोर्ट प्रारूप में उपलब्ध।</p>
+                <button class="btn-primary" onclick="window.print()" style="margin-top:12px">
+                  <i class="fa-solid fa-print"></i> <span id="btn-t-print">नाबार्ड प्रारूप में प्रिंट करें (Print as NABARD Format)</span>
+                </button>
+              </div>
+
+              <!-- LLM Narrator -->
+              <div class="card attr-llm">
+                <div class="attr-badge amber" id="txt-track-narr-badge"><i class="fa-solid fa-language"></i> AI व्याख्याकार (Vernacular Narrator)</div>
+                <div id="t-narrator" class="narrator-text"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== REPORT MODULE ==================== -->
+        <section class="module" id="module-report">
+          <div class="module-inner">
+            <div class="module-header">
+              <h1 class="module-title" id="txt-rep-title">नाबार्ड / MoSJE रिपोर्ट एक्सपोर्ट (NABARD & MoSJE Report Export)</h1>
+              <p class="module-desc" id="txt-rep-desc">बैंक लोन स्वीकृति हेतु आधिकारिक मॉडल बैंकेबल प्रोजेक्ट रिपोर्ट। (Bank-acceptable report matching Model Bankable Project Report format).</p>
+            </div>
+
+            <div class="card">
+              <h2 class="card-title" id="txt-rep-form-title">व्यवसाय विवरण (Business Details Onboarding)</h2>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label id="lbl-r-name">व्यवसाय का नाम (Business Name)</label>
+                  <input type="text" id="r-name" placeholder="जैसे, शर्मा किराना एवं जनरल स्टोर" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-r-village">गाँव (Village)</label>
+                  <input type="text" id="r-village" placeholder="रामगढ़ (Ramgarh)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-r-block">ब्लॉक (Block)</label>
+                  <input type="text" id="r-block" placeholder="सदर (Sadar)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-r-district">जिला (District)</label>
+                  <input type="text" id="r-district" placeholder="लखनऊ / पुणे (District)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-r-margin">मार्जिन पूँजी (Margin Capital - ₹)</label>
+                  <input type="number" id="r-margin" placeholder="उदा. 1,00,000 (e.g. 100000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-r-rev">मासिक आय (Monthly Revenue - ₹)</label>
+                  <input type="number" id="r-revenue" placeholder="उदा. 80,000 (e.g. 80000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-r-cogs">माल की लागत (Monthly COGS - ₹)</label>
+                  <input type="number" id="r-cogs" placeholder="उदा. 50,000 (e.g. 50000)" class="input" />
+                </div>
+                <div class="form-group">
+                  <label id="lbl-r-opex">मासिक खर्च (Monthly OpEx - ₹)</label>
+                  <input type="number" id="r-opex" placeholder="उदा. 12,000 (e.g. 12000)" class="input" />
+                </div>
+              </div>
+              <button class="btn-primary" onclick="generateNABARDReport()">
+                <span id="btn-r-submit">आधिकारिक रिपोर्ट तैयार करें (Generate Official Report)</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- Report Output -->
+            <div id="report-output" class="hidden">
+              <button class="btn-primary" onclick="window.print()" style="margin-bottom:16px">
+                <i class="fa-solid fa-print"></i> <span id="btn-r-print">प्रिंट / पीडीएफ सेव करें (Print / Save as PDF)</span>
+              </button>
+              <div class="nabard-report" id="report-content"></div>
+            </div>
+            <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.8rem; color: var(--muted);">
+              <div>व्यापार वर्धन AI - ग्रामीण व्यवसाय सलाहकार</div>
+              <div style="margin-top: 6px;">
+                <a href="privacy.html" target="_blank" style="color: var(--muted); text-decoration: underline;">Privacy Policy</a> • 
+                <a href="terms.html" target="_blank" style="color: var(--muted); text-decoration: underline;">Terms and Conditions</a>
+              </div>
+            </footer>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="overlay" id="overlay" hidden></div>
+
+    <script>
+      // Standalone access guard: if visited directly in top window, ensure authenticated
+      if (window.self === window.top) {
+        try {
+          var isAuth = sessionStorage.getItem("vyapar_logged_in") === "true";
+          if (!isAuth) {
+            window.location.replace("index.html");
+          }
+        } catch (e) {}
+      } else {
+        document.body.classList.add('is-embedded');
+      }
+    </script>
+    <script src="engine.js?v=3.8"></script>
+    <script src="app.js?v=3.8"></script>
+  
+    <!-- Global Sync Script -->
+    <script>
+      function syncFields(sourceId, targetIds) {
+        const source = document.getElementById(sourceId);
+        if (!source) return;
+        source.addEventListener('input', (e) => {
+          targetIds.forEach(targetId => {
+            const target = document.getElementById(targetId);
+            if (target && target.value !== e.target.value) {
+              target.value = e.target.value;
+            }
+          });
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // Margin Capital Sync
+        syncFields('f-margin', ['c-margin', 'r-margin']);
+        syncFields('c-margin', ['f-margin', 'r-margin']);
+        syncFields('r-margin', ['f-margin', 'c-margin']);
+
+        // Revenue Sync
+        syncFields('c-revenue', ['r-revenue']);
+        syncFields('r-revenue', ['c-revenue']);
+
+        // COGS Sync
+        syncFields('c-cogs', ['r-cogs']);
+        syncFields('r-cogs', ['c-cogs']);
+
+        // OpEx Sync
+        syncFields('c-opex', ['r-opex']);
+        syncFields('r-opex', ['c-opex']);
+
+        // Village Sync
+        syncFields('f-village', ['r-village']);
+        syncFields('r-village', ['f-village']);
+
+        // Block Sync
+        syncFields('f-block', ['r-block']);
+        syncFields('r-block', ['f-block']);
+
+        // District Sync
+        syncFields('f-district', ['r-district']);
+        syncFields('r-district', ['f-district']);
+        
+        // Category Sync
+        syncFields('f-category', ['c-category']);
+        syncFields('c-category', ['f-category']);
+      });
+    </script>
+  </body>
+</html>
