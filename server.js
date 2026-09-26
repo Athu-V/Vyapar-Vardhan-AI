@@ -294,13 +294,13 @@ const server = http.createServer(async (req, res) => {
 
   if (reqPath === "/" || reqPath === "") reqPath = "/index.html"
 
-  // Block hidden files (e.g. .env, .git) and traversal attempts
-  const segments = reqPath.split("/").filter(Boolean)
+  // Strip leading slashes to prevent absolute root resolution on Linux/Render
+  const safeRelative = reqPath.replace(/^[/\\]+/, "")
+  const segments = safeRelative.split(/[/\\]/).filter(Boolean)
   const isHidden = segments.some((seg) => seg.startsWith("."))
-  const normalizedPath = path.normalize(reqPath).replace(/^(\.\.[\/\\])+/, "")
-  const filePath = path.resolve(path.join(__dirname, normalizedPath))
+  const filePath = path.resolve(__dirname, safeRelative)
 
-  // Block access outside __dirname
+  // Block access outside __dirname (directory traversal)
   if (!filePath.startsWith(path.resolve(__dirname))) {
     res.writeHead(403, { "Content-Type": "text/plain" })
     res.end("403 Forbidden")
