@@ -15,8 +15,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app.css?v=4.0" />
   </head>
   <body class="app-body">
     <!-- Ambient Canvas Background -->
@@ -84,6 +83,7 @@
           </div>
         </div>
       </aside>
+      <div id="overlay" class="sidebar-backdrop" hidden></div>
 
       <!-- Mobile Header -->
       <header class="mobile-header">
@@ -93,7 +93,9 @@
           <span class="burger-bar"></span>
         </button>
         <span class="mobile-title">ग्राम व्यापार सहायक (Rural Advisory)</span>
-        <div style="width:36px"></div>
+        <a href="index.html" class="mobile-chat-btn" aria-label="AI मित्र चैट" title="AI मित्र चैट (AI Mitra Chat)">
+          <i class="fa-solid fa-comments"></i>
+        </a>
       </header>
 
       <!-- Main Content -->
@@ -550,8 +552,8 @@
         document.body.classList.add('is-embedded');
       }
     </script>
-    <script src="engine.js?v=3.8"></script>
-    <script src="app.js?v=3.8"></script>
+    <script src="engine.js?v=4.0"></script>
+    <script src="app.js?v=4.0"></script>
   
     <!-- Global Sync Script -->
     <script>

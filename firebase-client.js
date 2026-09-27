@@ -43,7 +43,7 @@
         displayName.charAt(0).toUpperCase() +
         '</span>' +
         '<span class="user-name-text">' + displayName + '</span>' +
-        '<button type="button" id="headerSignOutBtn" class="header-signout-btn" title="Sign out / लॉगआउट"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>'
+        '<button type="button" id="headerSignOutBtn" class="header-signout-btn" title="Sign out / लॉगआउट" aria-label="Sign out"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="signout-text">Logout</span></button>'
 
       var actions = document.querySelector(".chat-header-actions")
       if (actions) {

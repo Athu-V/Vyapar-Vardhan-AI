@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="chat.css?v=3.7">
+  <link rel="stylesheet" href="chat.css?v=4.0">
 </head>
 <body>
   <!-- ==================== LOGIN OVERLAY (AUTH) ==================== -->
@@ -81,9 +81,9 @@
           <button type="button" id="authSwitchBtn">Sign Up</button>
         </div>
 
-        <div class="auth-guest-row" style="margin-top: 12px; text-align: center;">
-          <button type="button" id="guestSignInBtn" class="auth-guest-btn" style="background: transparent; border: 1px dashed rgba(255,255,255,0.2); border-radius: 6px; padding: 6px 14px; color: #94a3b8; font-size: 0.82rem; cursor: pointer; transition: all 0.2s ease;">
-            <i class="fa-solid fa-user-check" style="margin-right: 6px;"></i> Continue as Guest / अतिथि के रूप में देखें
+        <div class="auth-guest-row">
+          <button type="button" id="guestSignInBtn" class="auth-guest-btn">
+            <i class="fa-solid fa-user-check" aria-hidden="true"></i> <span>Continue as Guest / अतिथि के रूप में देखें</span>
           </button>
         </div>
 
@@ -219,7 +219,7 @@
         </div>
         <button id="closeToolkitBtn" class="modal-close-btn" type="button" aria-label="टूलकिट बंद करें">
           <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-          <span>वापस चैट पर जाएं (Back to Chat)</span>
+          <span>चैट (Chat)</span>
         </button>
       </div>
       
@@ -235,8 +235,8 @@
     </div>
   </div>
 
-  <script src="engine.js?v=3.9"></script>
-  <script src="firebase-client.js?v=3.9"></script>
-  <script src="chat.js?v=3.9"></script>
+  <script src="engine.js?v=4.0"></script>
+  <script src="firebase-client.js?v=4.0"></script>
+  <script src="chat.js?v=4.0"></script>
 </body>
 </html>

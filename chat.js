@@ -33,6 +33,7 @@
       appTitle: "व्यापार वर्धन AI",
       statusOnline: "ऑनलाइन सहायक",
       openToolkit: "विस्तृत टूलकिट",
+      openToolkitShort: "टूलकिट",
       inputPlaceholder: "अपनी भाषा में बोलें या व्यापार का सवाल पूछें...",
       listening: "सुन रहे हैं... बोलिए",
       welcomeGreeting: "राम-राम जी! मैं आपका **व्यापार वर्धन AI** हूँ।",
@@ -74,6 +75,7 @@
       appTitle: "व्यापार वर्धन AI",
       statusOnline: "ऑनलाइन मार्गदर्शक",
       openToolkit: "संपूर्ण टूलकिट",
+      openToolkitShort: "टूलकिट",
       inputPlaceholder: "आपल्या भाषेत बोला किंवा व्यवसायाबद्दल विचारा...",
       listening: "ऐकत आहे... बोला",
       welcomeGreeting: "नमस्कार! मी आपला **व्यापार वर्धन AI** आहे.",
@@ -115,6 +117,7 @@
       appTitle: "Vyapar Vardhan AI",
       statusOnline: "Rural AI Advisor",
       openToolkit: "Full Advisory Toolkit",
+      openToolkitShort: "Toolkit",
       inputPlaceholder: "Speak or type your enterprise query...",
       listening: "Listening... Speak clearly",
       welcomeGreeting: "Welcome! I am your **Vyapar Vardhan AI**.",
@@ -722,7 +725,13 @@
     if (statusLbl) statusLbl.textContent = t.statusOnline
 
     var toolkitBtnText = document.getElementById("toolkitBtnLabel")
-    if (toolkitBtnText) toolkitBtnText.textContent = t.openToolkit
+    if (toolkitBtnText) {
+      if (window.innerWidth <= 768 && t.openToolkitShort) {
+        toolkitBtnText.textContent = t.openToolkitShort
+      } else {
+        toolkitBtnText.textContent = t.openToolkit
+      }
+    }
 
     var chipsLabel = document.getElementById("quickChipsLabel")
     if (chipsLabel) chipsLabel.innerHTML = '<i class="fa-solid fa-bolt" aria-hidden="true"></i> <span>' + t.chipsLabel + '</span>'
@@ -825,6 +834,12 @@
     document.body.style.overflow = "hidden"
 
     var targetModule = moduleName || "home"
+
+    // Sync active state on navigation buttons
+    document.querySelectorAll(".modal-nav-btn").forEach(function (btn) {
+      if (btn.dataset.module === targetModule) btn.classList.add("active")
+      else btn.classList.remove("active")
+    })
 
     try {
       if (iframe.contentWindow) {
@@ -946,6 +961,8 @@
     // Modal Nav Buttons
     document.querySelectorAll(".modal-nav-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
+        document.querySelectorAll(".modal-nav-btn").forEach(function (b) { b.classList.remove("active") })
+        this.classList.add("active")
         var mod = this.dataset.module
         var iframe = document.getElementById("toolkitIframe")
         if (iframe && iframe.contentWindow && iframe.contentWindow.switchModule) {
